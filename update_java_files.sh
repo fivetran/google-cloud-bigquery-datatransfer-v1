@@ -10,6 +10,7 @@ TMP_OUTPUT_DIR=/tmp/datatransfer_output
 REPO_OUTPUT_DIR=$(pwd)/compiled
 
 rm -rf ${TMP_OUTPUT_DIR}
+rm -rf ${REPO_OUTPUT_DIR}
 mkdir -p ${TMP_OUTPUT_DIR}
 mkdir -p ${REPO_OUTPUT_DIR}
 
