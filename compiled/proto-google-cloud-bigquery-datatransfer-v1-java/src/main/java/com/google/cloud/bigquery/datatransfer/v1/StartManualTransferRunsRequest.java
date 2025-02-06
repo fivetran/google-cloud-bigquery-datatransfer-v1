@@ -38,6 +38,18 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 2:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -54,8 +66,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-     * the end_time. Creates transfer runs where run_time is in the range
-     * between start_time (inclusive) and end_time (exclusive).
+     * the end_time. Creates transfer runs where run_time is in the range betwen
+     * start_time (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -66,8 +78,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-     * the end_time. Creates transfer runs where run_time is in the range
-     * between start_time (inclusive) and end_time (exclusive).
+     * the end_time. Creates transfer runs where run_time is in the range betwen
+     * start_time (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -78,8 +90,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-     * the end_time. Creates transfer runs where run_time is in the range
-     * between start_time (inclusive) and end_time (exclusive).
+     * the end_time. Creates transfer runs where run_time is in the range betwen
+     * start_time (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -90,8 +102,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-     * Creates transfer runs where run_time is in the range between start_time
-     * (inclusive) and end_time (exclusive).
+     * Creates transfer runs where run_time is in the range betwen start_time
+     * (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -102,8 +114,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-     * Creates transfer runs where run_time is in the range between start_time
-     * (inclusive) and end_time (exclusive).
+     * Creates transfer runs where run_time is in the range betwen start_time
+     * (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -114,8 +126,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-     * Creates transfer runs where run_time is in the range between start_time
-     * (inclusive) and end_time (exclusive).
+     * Creates transfer runs where run_time is in the range betwen start_time
+     * (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -171,8 +183,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-     * the end_time. Creates transfer runs where run_time is in the range
-     * between start_time (inclusive) and end_time (exclusive).
+     * the end_time. Creates transfer runs where run_time is in the range betwen
+     * start_time (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -186,8 +198,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-     * the end_time. Creates transfer runs where run_time is in the range
-     * between start_time (inclusive) and end_time (exclusive).
+     * the end_time. Creates transfer runs where run_time is in the range betwen
+     * start_time (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -201,8 +213,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Start time of the range of transfer runs. For example,
      * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-     * the end_time. Creates transfer runs where run_time is in the range
-     * between start_time (inclusive) and end_time (exclusive).
+     * the end_time. Creates transfer runs where run_time is in the range betwen
+     * start_time (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -218,8 +230,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-     * Creates transfer runs where run_time is in the range between start_time
-     * (inclusive) and end_time (exclusive).
+     * Creates transfer runs where run_time is in the range betwen start_time
+     * (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -233,8 +245,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-     * Creates transfer runs where run_time is in the range between start_time
-     * (inclusive) and end_time (exclusive).
+     * Creates transfer runs where run_time is in the range betwen start_time
+     * (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -248,8 +260,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * End time of the range of transfer runs. For example,
      * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-     * Creates transfer runs where run_time is in the range between start_time
-     * (inclusive) and end_time (exclusive).
+     * Creates transfer runs where run_time is in the range betwen start_time
+     * (inclusive) and end_time (exlusive).
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -624,8 +636,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -638,8 +650,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -656,8 +668,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -679,8 +691,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -700,8 +712,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -728,8 +740,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -748,8 +760,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -763,8 +775,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -781,8 +793,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Start time of the range of transfer runs. For example,
        * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
-       * the end_time. Creates transfer runs where run_time is in the range
-       * between start_time (inclusive) and end_time (exclusive).
+       * the end_time. Creates transfer runs where run_time is in the range betwen
+       * start_time (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -808,8 +820,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -822,8 +834,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -840,8 +852,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -863,8 +875,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -884,8 +896,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -912,8 +924,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -932,8 +944,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -947,8 +959,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -965,8 +977,8 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * End time of the range of transfer runs. For example,
        * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
-       * Creates transfer runs where run_time is in the range between start_time
-       * (inclusive) and end_time (exclusive).
+       * Creates transfer runs where run_time is in the range betwen start_time
+       * (inclusive) and end_time (exlusive).
        * </pre>
        *
        * <code>.google.protobuf.Timestamp end_time = 2;</code>
@@ -1083,12 +1095,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_ = "";
   /**
    * <pre>
-   * Required. Transfer configuration name in the form:
+   * Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -1106,12 +1118,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Transfer configuration name in the form:
+   * Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   @java.lang.Override
@@ -1129,13 +1141,105 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LABELS_FIELD_NUMBER = 2;
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_LabelsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> labels_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int REQUESTED_TIME_RANGE_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
+   * Time range for the transfer runs that should be started.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1147,10 +1251,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
+   * Time range for the transfer runs that should be started.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1165,10 +1266,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
+   * Time range for the transfer runs that should be started.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1184,10 +1282,8 @@ private static final long serialVersionUID = 0L;
   public static final int REQUESTED_RUN_TIME_FIELD_NUMBER = 4;
   /**
    * <pre>
-   * A run_time timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
+   * Specific run_time for a transfer run to be started. The
+   * requested_run_time must not be in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1199,10 +1295,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A run_time timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
+   * Specific run_time for a transfer run to be started. The
+   * requested_run_time must not be in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1217,10 +1311,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A run_time timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
+   * Specific run_time for a transfer run to be started. The
+   * requested_run_time must not be in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1250,6 +1342,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, parent_);
     }
+    com.google.protobuf.GeneratedMessage
+      .serializeStringMapTo(
+        output,
+        internalGetLabels(),
+        LabelsDefaultEntryHolder.defaultEntry,
+        2);
     if (timeCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange) time_);
     }
@@ -1267,6 +1365,16 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, parent_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, labels__);
     }
     if (timeCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
@@ -1293,6 +1401,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getParent()
         .equals(other.getParent())) return false;
+    if (!internalGetLabels().equals(
+        other.internalGetLabels())) return false;
     if (!getTimeCase().equals(other.getTimeCase())) return false;
     switch (timeCase_) {
       case 3:
@@ -1319,6 +1429,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     switch (timeCase_) {
       case 3:
         hash = (37 * hash) + REQUESTED_TIME_RANGE_FIELD_NUMBER;
@@ -1444,6 +1558,28 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_StartManualTransferRunsRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1467,6 +1603,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      internalGetMutableLabels().clear();
       if (requestedTimeRangeBuilder_ != null) {
         requestedTimeRangeBuilder_.clear();
       }
@@ -1512,6 +1649,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest result) {
@@ -1544,6 +1685,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      internalGetMutableLabels().mergeFrom(
+          other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       switch (other.getTimeCase()) {
         case REQUESTED_TIME_RANGE: {
           mergeRequestedTimeRange(other.getRequestedTimeRange());
@@ -1588,6 +1732,15 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              labels__ = input.readMessage(
+                  LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableLabels().getMutableMap().put(
+                  labels__.getKey(), labels__.getValue());
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             case 26: {
               input.readMessage(
                   getRequestedTimeRangeFieldBuilder().getBuilder(),
@@ -1637,12 +1790,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Transfer configuration name in the form:
+     * Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
     public java.lang.String getParent() {
@@ -1659,12 +1812,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Transfer configuration name in the form:
+     * Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
@@ -1682,12 +1835,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Transfer configuration name in the form:
+     * Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -1701,12 +1854,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Transfer configuration name in the form:
+     * Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -1717,12 +1870,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Transfer configuration name in the form:
+     * Transfer configuration name in the form:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
@@ -1736,14 +1889,166 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> labels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return labels_;
+    }
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getLabelsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableLabels().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    public Builder removeLabels(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableLabels().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableLabels() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    public Builder putLabels(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableLabels().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     * <pre>
+     * User labels to add to the backfilled runs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 2;</code>
+     */
+    public Builder putAllLabels(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
     private com.google.protobuf.SingleFieldBuilder<
         com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange, com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange.Builder, com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRangeOrBuilder> requestedTimeRangeBuilder_;
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1755,10 +2060,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1780,10 +2082,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1803,10 +2102,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1824,10 +2120,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1854,10 +2147,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1880,10 +2170,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1893,10 +2180,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1914,10 +2198,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A time_range start and end timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_time_range must be a past time and cannot include future time
-     * values.
+     * Time range for the transfer runs that should be started.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -1945,10 +2226,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> requestedRunTimeBuilder_;
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1960,10 +2239,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -1985,10 +2262,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2008,10 +2283,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2029,10 +2302,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2059,10 +2330,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2085,10 +2354,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2098,10 +2365,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -2119,10 +2384,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A run_time timestamp for historical data files or reports
-     * that are scheduled to be transferred by the scheduled transfer run.
-     * requested_run_time must be a past time and cannot include future time
-     * values.
+     * Specific run_time for a transfer run to be started. The
+     * requested_run_time must not be in the future.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>

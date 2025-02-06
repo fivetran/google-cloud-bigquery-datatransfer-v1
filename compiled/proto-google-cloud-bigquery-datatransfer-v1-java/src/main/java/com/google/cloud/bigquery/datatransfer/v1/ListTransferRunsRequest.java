@@ -6,7 +6,9 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
  * <pre>
- * A request to list data transfer runs.
+ * A request to list data transfer runs. UI can use this method to show/filter
+ * specific data transfer runs. The data source can use this method to request
+ * all scheduled transfer runs.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest}
@@ -191,8 +193,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_ = "";
   /**
    * <pre>
-   * Required. Name of transfer configuration for which transfer runs should be
-   * retrieved. Format of transfer configuration resource name is:
+   * Required. Name of transfer configuration for which transfer runs should be retrieved.
+   * Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
@@ -215,8 +217,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Name of transfer configuration for which transfer runs should be
-   * retrieved. Format of transfer configuration resource name is:
+   * Required. Name of transfer configuration for which transfer runs should be retrieved.
+   * Format of transfer configuration resource name is:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
@@ -627,7 +629,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A request to list data transfer runs.
+   * A request to list data transfer runs. UI can use this method to show/filter
+   * specific data transfer runs. The data source can use this method to request
+   * all scheduled transfer runs.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest}
@@ -846,8 +850,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be
-     * retrieved. Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be retrieved.
+     * Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -869,8 +873,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be
-     * retrieved. Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be retrieved.
+     * Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -893,8 +897,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be
-     * retrieved. Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be retrieved.
+     * Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -913,8 +917,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be
-     * retrieved. Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be retrieved.
+     * Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>
@@ -930,8 +934,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Name of transfer configuration for which transfer runs should be
-     * retrieved. Format of transfer configuration resource name is:
+     * Required. Name of transfer configuration for which transfer runs should be retrieved.
+     * Format of transfer configuration resource name is:
      * `projects/{project_id}/transferConfigs/{config_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
      * </pre>

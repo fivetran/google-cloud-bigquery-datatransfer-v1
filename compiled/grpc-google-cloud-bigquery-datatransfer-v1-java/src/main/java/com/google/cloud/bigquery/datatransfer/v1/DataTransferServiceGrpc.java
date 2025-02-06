@@ -4,7 +4,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * This API allows users to manage their data transfers into BigQuery.
+ * The Google BigQuery Data Transfer Service API enables BigQuery users to
+ * configure the transfer of their data from other Google Products into
+ * BigQuery. This service contains methods that are end user exposed. It backs
+ * up the frontend.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -452,66 +455,66 @@ public final class DataTransferServiceGrpc {
     return getCheckValidCredsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
-      com.google.protobuf.Empty> getEnrollDataSourcesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
+      com.google.protobuf.Empty> getEnableDataTransferServiceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "EnrollDataSources",
-      requestType = com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "EnableDataTransferService",
+      requestType = com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
-      com.google.protobuf.Empty> getEnrollDataSourcesMethod() {
-    io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest, com.google.protobuf.Empty> getEnrollDataSourcesMethod;
-    if ((getEnrollDataSourcesMethod = DataTransferServiceGrpc.getEnrollDataSourcesMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
+      com.google.protobuf.Empty> getEnableDataTransferServiceMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest, com.google.protobuf.Empty> getEnableDataTransferServiceMethod;
+    if ((getEnableDataTransferServiceMethod = DataTransferServiceGrpc.getEnableDataTransferServiceMethod) == null) {
       synchronized (DataTransferServiceGrpc.class) {
-        if ((getEnrollDataSourcesMethod = DataTransferServiceGrpc.getEnrollDataSourcesMethod) == null) {
-          DataTransferServiceGrpc.getEnrollDataSourcesMethod = getEnrollDataSourcesMethod =
-              io.grpc.MethodDescriptor.<com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getEnableDataTransferServiceMethod = DataTransferServiceGrpc.getEnableDataTransferServiceMethod) == null) {
+          DataTransferServiceGrpc.getEnableDataTransferServiceMethod = getEnableDataTransferServiceMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnrollDataSources"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableDataTransferService"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest.getDefaultInstance()))
+                  com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new DataTransferServiceMethodDescriptorSupplier("EnrollDataSources"))
+              .setSchemaDescriptor(new DataTransferServiceMethodDescriptorSupplier("EnableDataTransferService"))
               .build();
         }
       }
     }
-    return getEnrollDataSourcesMethod;
+    return getEnableDataTransferServiceMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
-      com.google.protobuf.Empty> getUnenrollDataSourcesMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
+      com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse> getIsDataTransferServiceEnabledMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UnenrollDataSources",
-      requestType = com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest.class,
-      responseType = com.google.protobuf.Empty.class,
+      fullMethodName = SERVICE_NAME + '/' + "IsDataTransferServiceEnabled",
+      requestType = com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest.class,
+      responseType = com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
-      com.google.protobuf.Empty> getUnenrollDataSourcesMethod() {
-    io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest, com.google.protobuf.Empty> getUnenrollDataSourcesMethod;
-    if ((getUnenrollDataSourcesMethod = DataTransferServiceGrpc.getUnenrollDataSourcesMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
+      com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse> getIsDataTransferServiceEnabledMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest, com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse> getIsDataTransferServiceEnabledMethod;
+    if ((getIsDataTransferServiceEnabledMethod = DataTransferServiceGrpc.getIsDataTransferServiceEnabledMethod) == null) {
       synchronized (DataTransferServiceGrpc.class) {
-        if ((getUnenrollDataSourcesMethod = DataTransferServiceGrpc.getUnenrollDataSourcesMethod) == null) {
-          DataTransferServiceGrpc.getUnenrollDataSourcesMethod = getUnenrollDataSourcesMethod =
-              io.grpc.MethodDescriptor.<com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getIsDataTransferServiceEnabledMethod = DataTransferServiceGrpc.getIsDataTransferServiceEnabledMethod) == null) {
+          DataTransferServiceGrpc.getIsDataTransferServiceEnabledMethod = getIsDataTransferServiceEnabledMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest, com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UnenrollDataSources"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "IsDataTransferServiceEnabled"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest.getDefaultInstance()))
+                  com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new DataTransferServiceMethodDescriptorSupplier("UnenrollDataSources"))
+                  com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new DataTransferServiceMethodDescriptorSupplier("IsDataTransferServiceEnabled"))
               .build();
         }
       }
     }
-    return getUnenrollDataSourcesMethod;
+    return getIsDataTransferServiceEnabledMethod;
   }
 
   /**
@@ -560,14 +563,18 @@ public final class DataTransferServiceGrpc {
 
   /**
    * <pre>
-   * This API allows users to manage their data transfers into BigQuery.
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public interface AsyncService {
 
     /**
      * <pre>
-     * Retrieves a supported data source and returns its settings.
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     default void getDataSource(com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request,
@@ -577,7 +584,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Lists supported data sources and returns their settings.
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     default void listDataSources(com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request,
@@ -608,8 +616,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a data transfer configuration, including any associated transfer
-     * runs and logs.
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
      * </pre>
      */
     default void deleteTransferConfig(com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request,
@@ -629,8 +637,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all transfer configs owned by a project in the
-     * specified location.
+     * Returns information about all data transfers in the project.
      * </pre>
      */
     default void listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
@@ -688,7 +695,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about running and completed transfer runs.
+     * Returns information about running and completed jobs.
      * </pre>
      */
     default void listTransferRuns(com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request,
@@ -698,7 +705,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns log messages for the transfer run.
+     * Returns user facing log messages for the data transfer run.
      * </pre>
      */
     default void listTransferLogs(com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request,
@@ -710,6 +717,10 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
      * </pre>
      */
     default void checkValidCreds(com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request,
@@ -719,40 +730,35 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Enroll data sources in a user project. This allows users to create transfer
-     * configurations for these data sources. They will also appear in the
-     * ListDataSources RPC and as such, will appear in the
-     * [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents
-     * can be found in the public guide for
-     * [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and
-     * [Data Transfer
-     * Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * Enables data transfer service for a given project. This
+     * method requires the additional scope of
+     * 'https://www.googleapis.com/auth/cloudplatformprojects'
+     * to manage the cloud project permissions.
      * </pre>
      */
-    default void enrollDataSources(com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request,
+    default void enableDataTransferService(com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnrollDataSourcesMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEnableDataTransferServiceMethod(), responseObserver);
     }
 
     /**
      * <pre>
-     * Unenroll data sources in a user project. This allows users to remove
-     * transfer configurations for these data sources. They will no longer appear
-     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
-     * UI](https://console.cloud.google.com/bigquery). Data transfers
-     * configurations of unenrolled data sources will not be scheduled.
+     * Returns true if data transfer is enabled for a project.
      * </pre>
      */
-    default void unenrollDataSources(com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUnenrollDataSourcesMethod(), responseObserver);
+    default void isDataTransferServiceEnabled(com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getIsDataTransferServiceEnabledMethod(), responseObserver);
     }
   }
 
   /**
    * Base class for the server implementation of the service DataTransferService.
    * <pre>
-   * This API allows users to manage their data transfers into BigQuery.
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static abstract class DataTransferServiceImplBase
@@ -766,7 +772,10 @@ public final class DataTransferServiceGrpc {
   /**
    * A stub to allow clients to do asynchronous rpc calls to service DataTransferService.
    * <pre>
-   * This API allows users to manage their data transfers into BigQuery.
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static final class DataTransferServiceStub
@@ -784,7 +793,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Retrieves a supported data source and returns its settings.
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     public void getDataSource(com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request,
@@ -795,7 +805,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Lists supported data sources and returns their settings.
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     public void listDataSources(com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request,
@@ -829,8 +840,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a data transfer configuration, including any associated transfer
-     * runs and logs.
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
      * </pre>
      */
     public void deleteTransferConfig(com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request,
@@ -852,8 +863,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all transfer configs owned by a project in the
-     * specified location.
+     * Returns information about all data transfers in the project.
      * </pre>
      */
     public void listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
@@ -916,7 +926,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about running and completed transfer runs.
+     * Returns information about running and completed jobs.
      * </pre>
      */
     public void listTransferRuns(com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request,
@@ -927,7 +937,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns log messages for the transfer run.
+     * Returns user facing log messages for the data transfer run.
      * </pre>
      */
     public void listTransferLogs(com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request,
@@ -940,6 +950,10 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
      * </pre>
      */
     public void checkValidCreds(com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request,
@@ -950,42 +964,37 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Enroll data sources in a user project. This allows users to create transfer
-     * configurations for these data sources. They will also appear in the
-     * ListDataSources RPC and as such, will appear in the
-     * [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents
-     * can be found in the public guide for
-     * [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and
-     * [Data Transfer
-     * Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * Enables data transfer service for a given project. This
+     * method requires the additional scope of
+     * 'https://www.googleapis.com/auth/cloudplatformprojects'
+     * to manage the cloud project permissions.
      * </pre>
      */
-    public void enrollDataSources(com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request,
+    public void enableDataTransferService(com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getEnrollDataSourcesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getEnableDataTransferServiceMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      * <pre>
-     * Unenroll data sources in a user project. This allows users to remove
-     * transfer configurations for these data sources. They will no longer appear
-     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
-     * UI](https://console.cloud.google.com/bigquery). Data transfers
-     * configurations of unenrolled data sources will not be scheduled.
+     * Returns true if data transfer is enabled for a project.
      * </pre>
      */
-    public void unenrollDataSources(com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+    public void isDataTransferServiceEnabled(com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUnenrollDataSourcesMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getIsDataTransferServiceEnabledMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataTransferService.
    * <pre>
-   * This API allows users to manage their data transfers into BigQuery.
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static final class DataTransferServiceBlockingStub
@@ -1003,7 +1012,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Retrieves a supported data source and returns its settings.
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSource(com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request) {
@@ -1013,7 +1023,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Lists supported data sources and returns their settings.
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse listDataSources(com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request) {
@@ -1044,8 +1055,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a data transfer configuration, including any associated transfer
-     * runs and logs.
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
      * </pre>
      */
     public com.google.protobuf.Empty deleteTransferConfig(com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request) {
@@ -1065,8 +1076,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all transfer configs owned by a project in the
-     * specified location.
+     * Returns information about all data transfers in the project.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request) {
@@ -1124,7 +1134,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about running and completed transfer runs.
+     * Returns information about running and completed jobs.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse listTransferRuns(com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request) {
@@ -1134,7 +1144,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns log messages for the transfer run.
+     * Returns user facing log messages for the data transfer run.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse listTransferLogs(com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request) {
@@ -1146,6 +1156,10 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse checkValidCreds(com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {
@@ -1155,40 +1169,35 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Enroll data sources in a user project. This allows users to create transfer
-     * configurations for these data sources. They will also appear in the
-     * ListDataSources RPC and as such, will appear in the
-     * [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents
-     * can be found in the public guide for
-     * [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and
-     * [Data Transfer
-     * Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * Enables data transfer service for a given project. This
+     * method requires the additional scope of
+     * 'https://www.googleapis.com/auth/cloudplatformprojects'
+     * to manage the cloud project permissions.
      * </pre>
      */
-    public com.google.protobuf.Empty enrollDataSources(com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
+    public com.google.protobuf.Empty enableDataTransferService(com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getEnrollDataSourcesMethod(), getCallOptions(), request);
+          getChannel(), getEnableDataTransferServiceMethod(), getCallOptions(), request);
     }
 
     /**
      * <pre>
-     * Unenroll data sources in a user project. This allows users to remove
-     * transfer configurations for these data sources. They will no longer appear
-     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
-     * UI](https://console.cloud.google.com/bigquery). Data transfers
-     * configurations of unenrolled data sources will not be scheduled.
+     * Returns true if data transfer is enabled for a project.
      * </pre>
      */
-    public com.google.protobuf.Empty unenrollDataSources(com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request) {
+    public com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse isDataTransferServiceEnabled(com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUnenrollDataSourcesMethod(), getCallOptions(), request);
+          getChannel(), getIsDataTransferServiceEnabledMethod(), getCallOptions(), request);
     }
   }
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service DataTransferService.
    * <pre>
-   * This API allows users to manage their data transfers into BigQuery.
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static final class DataTransferServiceFutureStub
@@ -1206,7 +1215,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Retrieves a supported data source and returns its settings.
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.DataSource> getDataSource(
@@ -1217,7 +1227,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Lists supported data sources and returns their settings.
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse> listDataSources(
@@ -1251,8 +1262,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Deletes a data transfer configuration, including any associated transfer
-     * runs and logs.
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTransferConfig(
@@ -1274,8 +1285,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all transfer configs owned by a project in the
-     * specified location.
+     * Returns information about all data transfers in the project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse> listTransferConfigs(
@@ -1338,7 +1348,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about running and completed transfer runs.
+     * Returns information about running and completed jobs.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse> listTransferRuns(
@@ -1349,7 +1359,7 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns log messages for the transfer run.
+     * Returns user facing log messages for the data transfer run.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse> listTransferLogs(
@@ -1362,6 +1372,10 @@ public final class DataTransferServiceGrpc {
      * <pre>
      * Returns true if valid credentials exist for the given data source and
      * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse> checkValidCreds(
@@ -1372,35 +1386,27 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Enroll data sources in a user project. This allows users to create transfer
-     * configurations for these data sources. They will also appear in the
-     * ListDataSources RPC and as such, will appear in the
-     * [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents
-     * can be found in the public guide for
-     * [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and
-     * [Data Transfer
-     * Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * Enables data transfer service for a given project. This
+     * method requires the additional scope of
+     * 'https://www.googleapis.com/auth/cloudplatformprojects'
+     * to manage the cloud project permissions.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> enrollDataSources(
-        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> enableDataTransferService(
+        com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getEnrollDataSourcesMethod(), getCallOptions()), request);
+          getChannel().newCall(getEnableDataTransferServiceMethod(), getCallOptions()), request);
     }
 
     /**
      * <pre>
-     * Unenroll data sources in a user project. This allows users to remove
-     * transfer configurations for these data sources. They will no longer appear
-     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
-     * UI](https://console.cloud.google.com/bigquery). Data transfers
-     * configurations of unenrolled data sources will not be scheduled.
+     * Returns true if data transfer is enabled for a project.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> unenrollDataSources(
-        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse> isDataTransferServiceEnabled(
+        com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUnenrollDataSourcesMethod(), getCallOptions()), request);
+          getChannel().newCall(getIsDataTransferServiceEnabledMethod(), getCallOptions()), request);
     }
   }
 
@@ -1418,8 +1424,8 @@ public final class DataTransferServiceGrpc {
   private static final int METHODID_LIST_TRANSFER_RUNS = 11;
   private static final int METHODID_LIST_TRANSFER_LOGS = 12;
   private static final int METHODID_CHECK_VALID_CREDS = 13;
-  private static final int METHODID_ENROLL_DATA_SOURCES = 14;
-  private static final int METHODID_UNENROLL_DATA_SOURCES = 15;
+  private static final int METHODID_ENABLE_DATA_TRANSFER_SERVICE = 14;
+  private static final int METHODID_IS_DATA_TRANSFER_SERVICE_ENABLED = 15;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1494,13 +1500,13 @@ public final class DataTransferServiceGrpc {
           serviceImpl.checkValidCreds((com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>) responseObserver);
           break;
-        case METHODID_ENROLL_DATA_SOURCES:
-          serviceImpl.enrollDataSources((com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest) request,
+        case METHODID_ENABLE_DATA_TRANSFER_SERVICE:
+          serviceImpl.enableDataTransferService((com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_UNENROLL_DATA_SOURCES:
-          serviceImpl.unenrollDataSources((com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+        case METHODID_IS_DATA_TRANSFER_SERVICE_ENABLED:
+          serviceImpl.isDataTransferServiceEnabled((com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1619,19 +1625,19 @@ public final class DataTransferServiceGrpc {
               com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>(
                 service, METHODID_CHECK_VALID_CREDS)))
         .addMethod(
-          getEnrollDataSourcesMethod(),
+          getEnableDataTransferServiceMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+              com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest,
               com.google.protobuf.Empty>(
-                service, METHODID_ENROLL_DATA_SOURCES)))
+                service, METHODID_ENABLE_DATA_TRANSFER_SERVICE)))
         .addMethod(
-          getUnenrollDataSourcesMethod(),
+          getIsDataTransferServiceEnabledMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
-              com.google.protobuf.Empty>(
-                service, METHODID_UNENROLL_DATA_SOURCES)))
+              com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest,
+              com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse>(
+                service, METHODID_IS_DATA_TRANSFER_SERVICE_ENABLED)))
         .build();
   }
 
@@ -1694,8 +1700,8 @@ public final class DataTransferServiceGrpc {
               .addMethod(getListTransferRunsMethod())
               .addMethod(getListTransferLogsMethod())
               .addMethod(getCheckValidCredsMethod())
-              .addMethod(getEnrollDataSourcesMethod())
-              .addMethod(getUnenrollDataSourcesMethod())
+              .addMethod(getEnableDataTransferServiceMethod())
+              .addMethod(getIsDataTransferServiceEnabledMethod())
               .build();
         }
       }

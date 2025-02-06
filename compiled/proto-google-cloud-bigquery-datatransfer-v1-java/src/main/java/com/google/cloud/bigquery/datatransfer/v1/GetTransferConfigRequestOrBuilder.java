@@ -10,8 +10,8 @@ public interface GetTransferConfigRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The field will contain name of the resource requested, for
-   * example: `projects/{project_id}/transferConfigs/{config_id}` or
+   * Required. The field will contain name of the resource requested, for example:
+   * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *
@@ -21,8 +21,8 @@ public interface GetTransferConfigRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The field will contain name of the resource requested, for
-   * example: `projects/{project_id}/transferConfigs/{config_id}` or
+   * Required. The field will contain name of the resource requested, for example:
+   * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
    * </pre>
    *

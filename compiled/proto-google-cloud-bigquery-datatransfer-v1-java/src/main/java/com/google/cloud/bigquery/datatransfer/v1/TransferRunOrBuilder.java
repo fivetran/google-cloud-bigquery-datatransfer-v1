@@ -10,29 +10,83 @@ public interface TransferRunOrBuilder extends
 
   /**
    * <pre>
-   * Identifier. The resource name of the transfer run.
+   * The resource name of the transfer run.
    * Transfer run names have the form
    * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
    * The name is ignored when creating a transfer run.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Identifier. The resource name of the transfer run.
+   * The resource name of the transfer run.
    * Transfer run names have the form
    * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
    * The name is ignored when creating a transfer run.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  int getLabelsCount();
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  boolean containsLabels(
+      java.lang.String key);
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getLabels();
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getLabelsMap();
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  /* nullable */
+java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  java.lang.String getLabelsOrThrow(
+      java.lang.String key);
 
   /**
    * <pre>
@@ -207,11 +261,7 @@ public interface TransferRunOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Parameters specific to each data source. For more information
-   * see the bq tab in the 'Setting up a data transfer' section for each data
-   * source. For example the parameters for Cloud Storage transfers are listed
-   * here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Output only. Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -220,11 +270,7 @@ public interface TransferRunOrBuilder extends
   boolean hasParams();
   /**
    * <pre>
-   * Output only. Parameters specific to each data source. For more information
-   * see the bq tab in the 'Setting up a data transfer' section for each data
-   * source. For example the parameters for Cloud Storage transfers are listed
-   * here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Output only. Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -233,11 +279,7 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.Struct getParams();
   /**
    * <pre>
-   * Output only. Parameters specific to each data source. For more information
-   * see the bq tab in the 'Setting up a data transfer' section for each data
-   * source. For example the parameters for Cloud Storage transfers are listed
-   * here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Output only. Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -353,10 +395,7 @@ public interface TransferRunOrBuilder extends
   /**
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes.
-   *
-   * The format for specifying a pubsub topic is:
-   * `projects/{project_id}/topics/{topic_id}`
+   * transfer run finishes
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -366,10 +405,7 @@ public interface TransferRunOrBuilder extends
   /**
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes.
-   *
-   * The format for specifying a pubsub topic is:
-   * `projects/{project_id}/topics/{topic_id}`
+   * transfer run finishes
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -410,6 +446,36 @@ public interface TransferRunOrBuilder extends
    * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.bigquery.datatransfer.v1.EmailPreferencesOrBuilder getEmailPreferencesOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. This is the same token initialized from TransferConfig.
+   * Partner token is a unique identifier used for identifying a transfer setup
+   * stored on external partner side. The token is opaque to DTS and can only be
+   * interpreted by partner. Partner data source should create a mapping between
+   * the config id and the token to validate that a transfer config/run is
+   * legitimate.
+   * </pre>
+   *
+   * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The partnerToken.
+   */
+  java.lang.String getPartnerToken();
+  /**
+   * <pre>
+   * Output only. This is the same token initialized from TransferConfig.
+   * Partner token is a unique identifier used for identifying a transfer setup
+   * stored on external partner side. The token is opaque to DTS and can only be
+   * interpreted by partner. Partner data source should create a mapping between
+   * the config id and the token to validate that a transfer config/run is
+   * legitimate.
+   * </pre>
+   *
+   * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for partnerToken.
+   */
+  com.google.protobuf.ByteString
+      getPartnerTokenBytes();
 
   com.google.cloud.bigquery.datatransfer.v1.TransferRun.DestinationCase getDestinationCase();
 }

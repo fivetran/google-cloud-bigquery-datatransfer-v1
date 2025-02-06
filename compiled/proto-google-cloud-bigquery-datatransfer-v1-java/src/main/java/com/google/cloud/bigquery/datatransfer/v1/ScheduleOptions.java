@@ -71,7 +71,7 @@ private static final long serialVersionUID = 0L;
    * Specifies time to start scheduling transfer runs. The first run will be
    * scheduled at or after the start time according to a recurrence pattern
    * defined in the schedule string. The start time can be changed at any
-   * moment. The time when a data transfer can be triggered manually is not
+   * moment. The time when a data transfer can be trigerred manually is not
    * limited by this option.
    * </pre>
    *
@@ -87,7 +87,7 @@ private static final long serialVersionUID = 0L;
    * Specifies time to start scheduling transfer runs. The first run will be
    * scheduled at or after the start time according to a recurrence pattern
    * defined in the schedule string. The start time can be changed at any
-   * moment. The time when a data transfer can be triggered manually is not
+   * moment. The time when a data transfer can be trigerred manually is not
    * limited by this option.
    * </pre>
    *
@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
    * Specifies time to start scheduling transfer runs. The first run will be
    * scheduled at or after the start time according to a recurrence pattern
    * defined in the schedule string. The start time can be changed at any
-   * moment. The time when a data transfer can be triggered manually is not
+   * moment. The time when a data transfer can be trigerred manually is not
    * limited by this option.
    * </pre>
    *
@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Defines time to stop scheduling transfer runs. A transfer run cannot be
    * scheduled at or after the end time. The end time can be changed at any
-   * moment. The time when a data transfer can be triggered manually is not
+   * moment. The time when a data transfer can be trigerred manually is not
    * limited by this option.
    * </pre>
    *
@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Defines time to stop scheduling transfer runs. A transfer run cannot be
    * scheduled at or after the end time. The end time can be changed at any
-   * moment. The time when a data transfer can be triggered manually is not
+   * moment. The time when a data transfer can be trigerred manually is not
    * limited by this option.
    * </pre>
    *
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Defines time to stop scheduling transfer runs. A transfer run cannot be
    * scheduled at or after the end time. The end time can be changed at any
-   * moment. The time when a data transfer can be triggered manually is not
+   * moment. The time when a data transfer can be trigerred manually is not
    * limited by this option.
    * </pre>
    *
@@ -603,7 +603,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -768,7 +768,7 @@ private static final long serialVersionUID = 0L;
      * Specifies time to start scheduling transfer runs. The first run will be
      * scheduled at or after the start time according to a recurrence pattern
      * defined in the schedule string. The start time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -827,7 +827,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -850,7 +850,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -871,7 +871,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -899,7 +899,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -919,7 +919,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Defines time to stop scheduling transfer runs. A transfer run cannot be
      * scheduled at or after the end time. The end time can be changed at any
-     * moment. The time when a data transfer can be triggered manually is not
+     * moment. The time when a data transfer can be trigerred manually is not
      * limited by this option.
      * </pre>
      *

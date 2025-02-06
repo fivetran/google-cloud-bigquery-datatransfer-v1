@@ -20,7 +20,7 @@ package com.google.cloud.bigquery.datatransfer.v1.samples;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
-import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
+import com.google.cloud.bigquery.datatransfer.v1.ParentName;
 
 public class SyncListDataSources {
 
@@ -37,7 +37,7 @@ public class SyncListDataSources {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
       ListDataSourcesRequest request =
           ListDataSourcesRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
               .setPageToken("pageToken873572522")
               .setPageSize(883849137)
               .build();

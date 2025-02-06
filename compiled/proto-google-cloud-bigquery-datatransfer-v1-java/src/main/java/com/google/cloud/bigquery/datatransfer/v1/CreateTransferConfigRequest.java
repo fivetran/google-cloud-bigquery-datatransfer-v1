@@ -7,16 +7,11 @@ package com.google.cloud.bigquery.datatransfer.v1;
 /**
  * <pre>
  * A request to create a data transfer configuration. If new credentials are
- * needed for this transfer configuration, authorization info must be provided.
- * If authorization info is provided, the transfer configuration will be
- * associated with the user id corresponding to the authorization info.
- * Otherwise, the transfer configuration will be associated with the calling
- * user.
- *
- * When using a cross project service account for creating a transfer config,
- * you must enable cross project service account usage. For more information,
- * see [Disable attachment of service accounts to resources in other
- * projects](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-service-accounts#disable_cross_project_service_accounts).
+ * needed for this transfer configuration, an authorization code must be
+ * provided. If an authorization code is provided, the transfer configuration
+ * will be associated with the user id corresponding to the
+ * authorization code. Otherwise, the transfer configuration will be associated
+ * with the calling user.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest}
@@ -65,11 +60,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_ = "";
   /**
    * <pre>
-   * Required. The BigQuery project id where the transfer configuration should
-   * be created. Must be in the format
-   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-   * specified location and location of the destination bigquery dataset do not
-   * match - the request will fail.
+   * Required. The BigQuery project id where the transfer configuration should be created.
+   * Must be in the format projects/{project_id}/locations/{location_id} or
+   * projects/{project_id}. If specified location and location of the
+   * destination bigquery dataset do not match - the request will fail.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -90,11 +84,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The BigQuery project id where the transfer configuration should
-   * be created. Must be in the format
-   * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-   * specified location and location of the destination bigquery dataset do not
-   * match - the request will fail.
+   * Required. The BigQuery project id where the transfer configuration should be created.
+   * Must be in the format projects/{project_id}/locations/{location_id} or
+   * projects/{project_id}. If specified location and location of the
+   * destination bigquery dataset do not match - the request will fail.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -158,33 +151,29 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object authorizationCode_ = "";
   /**
    * <pre>
-   * Deprecated: Authorization code was required when
-   * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-   * in any data sources. Use `version_info` instead.
-   *
    * Optional OAuth2 authorization code to use with this transfer configuration.
-   * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-   * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-   * to obtain authorization_code, make a request to the following URL:
-   * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-   * &lt;/pre&gt;
-   * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-   * returned by ListDataSources method.
-   * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-   * method.
+   * This is required if new credentials are needed, as indicated by
+   * `CheckValidCreds`.
+   * In order to obtain authorization_code, please make a
+   * request to
+   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
    *
-   * Note that this should not be set when `service_account_name` is used to
-   * create the transfer config.
+   * * client_id should be OAuth client_id of BigQuery DTS API for the given
+   * data source returned by ListDataSources method.
+   * * data_source_scopes are the scopes returned by ListDataSources method.
+   * * redirect_uri is an optional parameter. If not specified, then
+   * authorization code is posted to the opener of authorization flow window.
+   * Otherwise it will be sent to the redirect uri. A special value of
+   * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+   * returned in the title bar of the browser, with the page text prompting
+   * the user to copy the code and paste it in the application.
    * </pre>
    *
-   * <code>string authorization_code = 3 [deprecated = true];</code>
-   * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-   *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+   * <code>string authorization_code = 3;</code>
    * @return The authorizationCode.
    */
   @java.lang.Override
-  @java.lang.Deprecated public java.lang.String getAuthorizationCode() {
+  public java.lang.String getAuthorizationCode() {
     java.lang.Object ref = authorizationCode_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -198,33 +187,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Deprecated: Authorization code was required when
-   * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-   * in any data sources. Use `version_info` instead.
-   *
    * Optional OAuth2 authorization code to use with this transfer configuration.
-   * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-   * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-   * to obtain authorization_code, make a request to the following URL:
-   * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-   * &lt;/pre&gt;
-   * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-   * returned by ListDataSources method.
-   * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-   * method.
+   * This is required if new credentials are needed, as indicated by
+   * `CheckValidCreds`.
+   * In order to obtain authorization_code, please make a
+   * request to
+   * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
    *
-   * Note that this should not be set when `service_account_name` is used to
-   * create the transfer config.
+   * * client_id should be OAuth client_id of BigQuery DTS API for the given
+   * data source returned by ListDataSources method.
+   * * data_source_scopes are the scopes returned by ListDataSources method.
+   * * redirect_uri is an optional parameter. If not specified, then
+   * authorization code is posted to the opener of authorization flow window.
+   * Otherwise it will be sent to the redirect uri. A special value of
+   * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+   * returned in the title bar of the browser, with the page text prompting
+   * the user to copy the code and paste it in the application.
    * </pre>
    *
-   * <code>string authorization_code = 3 [deprecated = true];</code>
-   * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-   *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+   * <code>string authorization_code = 3;</code>
    * @return The bytes for authorizationCode.
    */
   @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.ByteString
+  public com.google.protobuf.ByteString
       getAuthorizationCodeBytes() {
     java.lang.Object ref = authorizationCode_;
     if (ref instanceof java.lang.String) {
@@ -243,21 +228,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object versionInfo_ = "";
   /**
    * <pre>
-   * Optional version info. This parameter replaces `authorization_code` which
-   * is no longer used in any data sources. This is required only if
-   * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-   * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-   * info, make a request to the following URL:
-   * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-   * &lt;/pre&gt;
-   * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-   * returned by ListDataSources method.
-   * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-   * method.
-   *
-   * Note that this should not be set when `service_account_name` is used to
-   * create the transfer config.
+   * Optional version info. If users want to find a very recent access token,
+   * that is, immediately after approving access, users have to set the
+   * version_info claim in the token request. To obtain the version_info, users
+   * must use the "none+gsession" response type. which be return a
+   * version_info back in the authorization response which be be put in a JWT
+   * claim in the token request.
    * </pre>
    *
    * <code>string version_info = 5;</code>
@@ -278,21 +254,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional version info. This parameter replaces `authorization_code` which
-   * is no longer used in any data sources. This is required only if
-   * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-   * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-   * info, make a request to the following URL:
-   * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-   * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-   * &lt;/pre&gt;
-   * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-   * returned by ListDataSources method.
-   * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-   * method.
-   *
-   * Note that this should not be set when `service_account_name` is used to
-   * create the transfer config.
+   * Optional version info. If users want to find a very recent access token,
+   * that is, immediately after approving access, users have to set the
+   * version_info claim in the token request. To obtain the version_info, users
+   * must use the "none+gsession" response type. which be return a
+   * version_info back in the authorization response which be be put in a JWT
+   * claim in the token request.
    * </pre>
    *
    * <code>string version_info = 5;</code>
@@ -318,15 +285,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object serviceAccountName_ = "";
   /**
    * <pre>
-   * Optional service account email. If this field is set, the transfer config
-   * will be created with this service account's credentials. It requires that
-   * the requesting user calling this API has permissions to act as this service
+   * Optional service account name. If this field is set, transfer config will
+   * be created with this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
    * account.
-   *
-   * Note that not all data sources support service account credentials when
-   * creating a transfer config. For the latest list of data sources, read about
-   * [using service
-   * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
@@ -347,15 +309,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional service account email. If this field is set, the transfer config
-   * will be created with this service account's credentials. It requires that
-   * the requesting user calling this API has permissions to act as this service
+   * Optional service account name. If this field is set, transfer config will
+   * be created with this service account credentials. It requires that
+   * requesting user calling this API has permissions to act as this service
    * account.
-   *
-   * Note that not all data sources support service account credentials when
-   * creating a transfer config. For the latest list of data sources, read about
-   * [using service
-   * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
    * </pre>
    *
    * <code>string service_account_name = 6;</code>
@@ -581,16 +538,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * A request to create a data transfer configuration. If new credentials are
-   * needed for this transfer configuration, authorization info must be provided.
-   * If authorization info is provided, the transfer configuration will be
-   * associated with the user id corresponding to the authorization info.
-   * Otherwise, the transfer configuration will be associated with the calling
-   * user.
-   *
-   * When using a cross project service account for creating a transfer config,
-   * you must enable cross project service account usage. For more information,
-   * see [Disable attachment of service accounts to resources in other
-   * projects](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-service-accounts#disable_cross_project_service_accounts).
+   * needed for this transfer configuration, an authorization code must be
+   * provided. If an authorization code is provided, the transfer configuration
+   * will be associated with the user id corresponding to the
+   * authorization code. Otherwise, the transfer configuration will be associated
+   * with the calling user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest}
@@ -804,11 +756,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should
-     * be created. Must be in the format
-     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-     * specified location and location of the destination bigquery dataset do not
-     * match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should be created.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -828,11 +779,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should
-     * be created. Must be in the format
-     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-     * specified location and location of the destination bigquery dataset do not
-     * match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should be created.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -853,11 +803,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should
-     * be created. Must be in the format
-     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-     * specified location and location of the destination bigquery dataset do not
-     * match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should be created.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -874,11 +823,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should
-     * be created. Must be in the format
-     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-     * specified location and location of the destination bigquery dataset do not
-     * match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should be created.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -892,11 +840,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id where the transfer configuration should
-     * be created. Must be in the format
-     * projects/{project_id}/locations/{location_id} or projects/{project_id}. If
-     * specified location and location of the destination bigquery dataset do not
-     * match - the request will fail.
+     * Required. The BigQuery project id where the transfer configuration should be created.
+     * Must be in the format projects/{project_id}/locations/{location_id} or
+     * projects/{project_id}. If specified location and location of the
+     * destination bigquery dataset do not match - the request will fail.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -1073,32 +1020,28 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object authorizationCode_ = "";
     /**
      * <pre>
-     * Deprecated: Authorization code was required when
-     * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-     * in any data sources. Use `version_info` instead.
-     *
      * Optional OAuth2 authorization code to use with this transfer configuration.
-     * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-     * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-     * to obtain authorization_code, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
+     * This is required if new credentials are needed, as indicated by
+     * `CheckValidCreds`.
+     * In order to obtain authorization_code, please make a
+     * request to
+     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
      *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * * client_id should be OAuth client_id of BigQuery DTS API for the given
+     * data source returned by ListDataSources method.
+     * * data_source_scopes are the scopes returned by ListDataSources method.
+     * * redirect_uri is an optional parameter. If not specified, then
+     * authorization code is posted to the opener of authorization flow window.
+     * Otherwise it will be sent to the redirect uri. A special value of
+     * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+     * returned in the title bar of the browser, with the page text prompting
+     * the user to copy the code and paste it in the application.
      * </pre>
      *
-     * <code>string authorization_code = 3 [deprecated = true];</code>
-     * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-     *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+     * <code>string authorization_code = 3;</code>
      * @return The authorizationCode.
      */
-    @java.lang.Deprecated public java.lang.String getAuthorizationCode() {
+    public java.lang.String getAuthorizationCode() {
       java.lang.Object ref = authorizationCode_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1112,32 +1055,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated: Authorization code was required when
-     * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-     * in any data sources. Use `version_info` instead.
-     *
      * Optional OAuth2 authorization code to use with this transfer configuration.
-     * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-     * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-     * to obtain authorization_code, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
+     * This is required if new credentials are needed, as indicated by
+     * `CheckValidCreds`.
+     * In order to obtain authorization_code, please make a
+     * request to
+     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
      *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * * client_id should be OAuth client_id of BigQuery DTS API for the given
+     * data source returned by ListDataSources method.
+     * * data_source_scopes are the scopes returned by ListDataSources method.
+     * * redirect_uri is an optional parameter. If not specified, then
+     * authorization code is posted to the opener of authorization flow window.
+     * Otherwise it will be sent to the redirect uri. A special value of
+     * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+     * returned in the title bar of the browser, with the page text prompting
+     * the user to copy the code and paste it in the application.
      * </pre>
      *
-     * <code>string authorization_code = 3 [deprecated = true];</code>
-     * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-     *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+     * <code>string authorization_code = 3;</code>
      * @return The bytes for authorizationCode.
      */
-    @java.lang.Deprecated public com.google.protobuf.ByteString
+    public com.google.protobuf.ByteString
         getAuthorizationCodeBytes() {
       java.lang.Object ref = authorizationCode_;
       if (ref instanceof String) {
@@ -1152,33 +1091,29 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated: Authorization code was required when
-     * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-     * in any data sources. Use `version_info` instead.
-     *
      * Optional OAuth2 authorization code to use with this transfer configuration.
-     * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-     * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-     * to obtain authorization_code, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
+     * This is required if new credentials are needed, as indicated by
+     * `CheckValidCreds`.
+     * In order to obtain authorization_code, please make a
+     * request to
+     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
      *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * * client_id should be OAuth client_id of BigQuery DTS API for the given
+     * data source returned by ListDataSources method.
+     * * data_source_scopes are the scopes returned by ListDataSources method.
+     * * redirect_uri is an optional parameter. If not specified, then
+     * authorization code is posted to the opener of authorization flow window.
+     * Otherwise it will be sent to the redirect uri. A special value of
+     * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+     * returned in the title bar of the browser, with the page text prompting
+     * the user to copy the code and paste it in the application.
      * </pre>
      *
-     * <code>string authorization_code = 3 [deprecated = true];</code>
-     * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-     *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+     * <code>string authorization_code = 3;</code>
      * @param value The authorizationCode to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setAuthorizationCode(
+    public Builder setAuthorizationCode(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       authorizationCode_ = value;
@@ -1188,32 +1123,28 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated: Authorization code was required when
-     * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-     * in any data sources. Use `version_info` instead.
-     *
      * Optional OAuth2 authorization code to use with this transfer configuration.
-     * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-     * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-     * to obtain authorization_code, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
+     * This is required if new credentials are needed, as indicated by
+     * `CheckValidCreds`.
+     * In order to obtain authorization_code, please make a
+     * request to
+     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
      *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * * client_id should be OAuth client_id of BigQuery DTS API for the given
+     * data source returned by ListDataSources method.
+     * * data_source_scopes are the scopes returned by ListDataSources method.
+     * * redirect_uri is an optional parameter. If not specified, then
+     * authorization code is posted to the opener of authorization flow window.
+     * Otherwise it will be sent to the redirect uri. A special value of
+     * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+     * returned in the title bar of the browser, with the page text prompting
+     * the user to copy the code and paste it in the application.
      * </pre>
      *
-     * <code>string authorization_code = 3 [deprecated = true];</code>
-     * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-     *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+     * <code>string authorization_code = 3;</code>
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder clearAuthorizationCode() {
+    public Builder clearAuthorizationCode() {
       authorizationCode_ = getDefaultInstance().getAuthorizationCode();
       bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
@@ -1221,33 +1152,29 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated: Authorization code was required when
-     * `transferConfig.dataSourceId` is 'youtube_channel' but it is no longer used
-     * in any data sources. Use `version_info` instead.
-     *
      * Optional OAuth2 authorization code to use with this transfer configuration.
-     * This is required only if `transferConfig.dataSourceId` is 'youtube_channel'
-     * and new credentials are needed, as indicated by `CheckValidCreds`. In order
-     * to obtain authorization_code, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=authorization_code&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
+     * This is required if new credentials are needed, as indicated by
+     * `CheckValidCreds`.
+     * In order to obtain authorization_code, please make a
+     * request to
+     * https://www.gstatic.com/bigquerydatatransfer/oauthz/auth?client_id=&lt;datatransferapiclientid&gt;&amp;scope=&lt;data_source_scopes&gt;&amp;redirect_uri=&lt;redirect_uri&gt;
      *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * * client_id should be OAuth client_id of BigQuery DTS API for the given
+     * data source returned by ListDataSources method.
+     * * data_source_scopes are the scopes returned by ListDataSources method.
+     * * redirect_uri is an optional parameter. If not specified, then
+     * authorization code is posted to the opener of authorization flow window.
+     * Otherwise it will be sent to the redirect uri. A special value of
+     * urn:ietf:wg:oauth:2.0:oob means that authorization code should be
+     * returned in the title bar of the browser, with the page text prompting
+     * the user to copy the code and paste it in the application.
      * </pre>
      *
-     * <code>string authorization_code = 3 [deprecated = true];</code>
-     * @deprecated google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest.authorization_code is deprecated.
-     *     See google/cloud/bigquery/datatransfer/v1/datatransfer.proto;l=537
+     * <code>string authorization_code = 3;</code>
      * @param value The bytes for authorizationCode to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated public Builder setAuthorizationCodeBytes(
+    public Builder setAuthorizationCodeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
@@ -1260,21 +1187,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object versionInfo_ = "";
     /**
      * <pre>
-     * Optional version info. This parameter replaces `authorization_code` which
-     * is no longer used in any data sources. This is required only if
-     * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-     * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-     * info, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
-     *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * Optional version info. If users want to find a very recent access token,
+     * that is, immediately after approving access, users have to set the
+     * version_info claim in the token request. To obtain the version_info, users
+     * must use the "none+gsession" response type. which be return a
+     * version_info back in the authorization response which be be put in a JWT
+     * claim in the token request.
      * </pre>
      *
      * <code>string version_info = 5;</code>
@@ -1294,21 +1212,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional version info. This parameter replaces `authorization_code` which
-     * is no longer used in any data sources. This is required only if
-     * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-     * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-     * info, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
-     *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * Optional version info. If users want to find a very recent access token,
+     * that is, immediately after approving access, users have to set the
+     * version_info claim in the token request. To obtain the version_info, users
+     * must use the "none+gsession" response type. which be return a
+     * version_info back in the authorization response which be be put in a JWT
+     * claim in the token request.
      * </pre>
      *
      * <code>string version_info = 5;</code>
@@ -1329,21 +1238,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional version info. This parameter replaces `authorization_code` which
-     * is no longer used in any data sources. This is required only if
-     * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-     * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-     * info, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
-     *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * Optional version info. If users want to find a very recent access token,
+     * that is, immediately after approving access, users have to set the
+     * version_info claim in the token request. To obtain the version_info, users
+     * must use the "none+gsession" response type. which be return a
+     * version_info back in the authorization response which be be put in a JWT
+     * claim in the token request.
      * </pre>
      *
      * <code>string version_info = 5;</code>
@@ -1360,21 +1260,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional version info. This parameter replaces `authorization_code` which
-     * is no longer used in any data sources. This is required only if
-     * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-     * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-     * info, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
-     *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * Optional version info. If users want to find a very recent access token,
+     * that is, immediately after approving access, users have to set the
+     * version_info claim in the token request. To obtain the version_info, users
+     * must use the "none+gsession" response type. which be return a
+     * version_info back in the authorization response which be be put in a JWT
+     * claim in the token request.
      * </pre>
      *
      * <code>string version_info = 5;</code>
@@ -1388,21 +1279,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional version info. This parameter replaces `authorization_code` which
-     * is no longer used in any data sources. This is required only if
-     * `transferConfig.dataSourceId` is 'youtube_channel' *or* new credentials
-     * are needed, as indicated by `CheckValidCreds`. In order to obtain version
-     * info, make a request to the following URL:
-     * &lt;pre class="prettyprint" suppresswarning="true"&gt;
-     * https://bigquery.cloud.google.com/datatransfer/oauthz/auth?redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=version_info&amp;client_id=&lt;var&gt;client_id&lt;/var&gt;&amp;scope=&lt;var&gt;data_source_scopes&lt;/var&gt;
-     * &lt;/pre&gt;
-     * * The &lt;var&gt;client_id&lt;/var&gt; is the OAuth client_id of the data source as
-     * returned by ListDataSources method.
-     * * &lt;var&gt;data_source_scopes&lt;/var&gt; are the scopes returned by ListDataSources
-     * method.
-     *
-     * Note that this should not be set when `service_account_name` is used to
-     * create the transfer config.
+     * Optional version info. If users want to find a very recent access token,
+     * that is, immediately after approving access, users have to set the
+     * version_info claim in the token request. To obtain the version_info, users
+     * must use the "none+gsession" response type. which be return a
+     * version_info back in the authorization response which be be put in a JWT
+     * claim in the token request.
      * </pre>
      *
      * <code>string version_info = 5;</code>
@@ -1422,15 +1304,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object serviceAccountName_ = "";
     /**
      * <pre>
-     * Optional service account email. If this field is set, the transfer config
-     * will be created with this service account's credentials. It requires that
-     * the requesting user calling this API has permissions to act as this service
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
      * account.
-     *
-     * Note that not all data sources support service account credentials when
-     * creating a transfer config. For the latest list of data sources, read about
-     * [using service
-     * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
@@ -1450,15 +1327,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional service account email. If this field is set, the transfer config
-     * will be created with this service account's credentials. It requires that
-     * the requesting user calling this API has permissions to act as this service
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
      * account.
-     *
-     * Note that not all data sources support service account credentials when
-     * creating a transfer config. For the latest list of data sources, read about
-     * [using service
-     * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
@@ -1479,15 +1351,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional service account email. If this field is set, the transfer config
-     * will be created with this service account's credentials. It requires that
-     * the requesting user calling this API has permissions to act as this service
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
      * account.
-     *
-     * Note that not all data sources support service account credentials when
-     * creating a transfer config. For the latest list of data sources, read about
-     * [using service
-     * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
@@ -1504,15 +1371,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional service account email. If this field is set, the transfer config
-     * will be created with this service account's credentials. It requires that
-     * the requesting user calling this API has permissions to act as this service
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
      * account.
-     *
-     * Note that not all data sources support service account credentials when
-     * creating a transfer config. For the latest list of data sources, read about
-     * [using service
-     * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
      * </pre>
      *
      * <code>string service_account_name = 6;</code>
@@ -1526,15 +1388,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional service account email. If this field is set, the transfer config
-     * will be created with this service account's credentials. It requires that
-     * the requesting user calling this API has permissions to act as this service
+     * Optional service account name. If this field is set, transfer config will
+     * be created with this service account credentials. It requires that
+     * requesting user calling this API has permissions to act as this service
      * account.
-     *
-     * Note that not all data sources support service account credentials when
-     * creating a transfer config. For the latest list of data sources, read about
-     * [using service
-     * accounts](https://cloud.google.com/bigquery-transfer/docs/use-service-accounts).
      * </pre>
      *
      * <code>string service_account_name = 6;</code>

@@ -16,29 +16,32 @@
 
 package com.google.cloud.bigquery.datatransfer.v1.samples;
 
-// [START bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_Projectname_sync]
-import com.google.cloud.bigquery.datatransfer.v1.DataSource;
+// [START bigquerydatatransfer_v1_generated_DataTransferService_EnableDataTransferService_async]
+import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
+import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
+import com.google.protobuf.Empty;
 
-public class SyncListDataSourcesProjectname {
+public class AsyncEnableDataTransferService {
 
   public static void main(String[] args) throws Exception {
-    syncListDataSourcesProjectname();
+    asyncEnableDataTransferService();
   }
 
-  public static void syncListDataSourcesProjectname() throws Exception {
+  public static void asyncEnableDataTransferService() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
-        // doThingsWith(element);
-      }
+      EnableDataTransferServiceRequest request =
+          EnableDataTransferServiceRequest.newBuilder().setName("name3373707").build();
+      ApiFuture<Empty> future =
+          dataTransferServiceClient.enableDataTransferServiceCallable().futureCall(request);
+      // Do something.
+      future.get();
     }
   }
 }
-// [END bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_Projectname_sync]
+// [END bigquerydatatransfer_v1_generated_DataTransferService_EnableDataTransferService_async]

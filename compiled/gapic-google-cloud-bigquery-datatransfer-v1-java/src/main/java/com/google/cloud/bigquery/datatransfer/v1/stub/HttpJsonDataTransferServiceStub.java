@@ -40,10 +40,12 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
-import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
@@ -58,7 +60,6 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
-import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -640,29 +641,28 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<EnrollDataSourcesRequest, Empty>
-      enrollDataSourcesMethodDescriptor =
-          ApiMethodDescriptor.<EnrollDataSourcesRequest, Empty>newBuilder()
+  private static final ApiMethodDescriptor<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceMethodDescriptor =
+          ApiMethodDescriptor.<EnableDataTransferServiceRequest, Empty>newBuilder()
               .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/EnrollDataSources")
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/EnableDataTransferService")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<EnrollDataSourcesRequest>newBuilder()
+                  ProtoMessageRequestFormatter.<EnableDataTransferServiceRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=projects/*/locations/*}:enrollDataSources",
+                          "/v1/{name=projects/*/locations/*}:enableDataTransferService",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<EnrollDataSourcesRequest> serializer =
+                            ProtoRestSerializer<EnableDataTransferServiceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1/{name=projects/*}:enrollDataSources")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<EnrollDataSourcesRequest> serializer =
+                            ProtoRestSerializer<EnableDataTransferServiceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -679,28 +679,32 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<UnenrollDataSourcesRequest, Empty>
-      unenrollDataSourcesMethodDescriptor =
-          ApiMethodDescriptor.<UnenrollDataSourcesRequest, Empty>newBuilder()
+  private static final ApiMethodDescriptor<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledMethodDescriptor =
+          ApiMethodDescriptor
+              .<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+                  newBuilder()
               .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/UnenrollDataSources")
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/IsDataTransferServiceEnabled")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UnenrollDataSourcesRequest>newBuilder()
+                  ProtoMessageRequestFormatter.<IsDataTransferServiceEnabledRequest>newBuilder()
                       .setPath(
-                          "/v1/{name=projects/*/locations/*}:unenrollDataSources",
+                          "/v1/{name=projects/*/locations/*}:isDataTransferServiceEnabled",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UnenrollDataSourcesRequest> serializer =
+                            ProtoRestSerializer<IsDataTransferServiceEnabledRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*}:isEnabled")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UnenrollDataSourcesRequest> serializer =
+                            ProtoRestSerializer<IsDataTransferServiceEnabledRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -711,8 +715,8 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                                   .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
+                  ProtoMessageResponseParser.<IsDataTransferServiceEnabledResponse>newBuilder()
+                      .setDefaultInstance(IsDataTransferServiceEnabledResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -816,8 +820,11 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
       listTransferLogsPagedCallable;
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
-  private final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable;
-  private final UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable;
+  private final UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable;
+  private final UnaryCallable<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1036,28 +1043,32 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
-        HttpJsonCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()
-            .setMethodDescriptor(enrollDataSourcesMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    HttpJsonCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesTransportSettings =
-        HttpJsonCallSettings.<UnenrollDataSourcesRequest, Empty>newBuilder()
-            .setMethodDescriptor(unenrollDataSourcesMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
+    HttpJsonCallSettings<EnableDataTransferServiceRequest, Empty>
+        enableDataTransferServiceTransportSettings =
+            HttpJsonCallSettings.<EnableDataTransferServiceRequest, Empty>newBuilder()
+                .setMethodDescriptor(enableDataTransferServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+        isDataTransferServiceEnabledTransportSettings =
+            HttpJsonCallSettings
+                .<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+                    newBuilder()
+                .setMethodDescriptor(isDataTransferServiceEnabledMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1154,15 +1165,15 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
     this.checkValidCredsCallable =
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
-    this.enrollDataSourcesCallable =
+    this.enableDataTransferServiceCallable =
         callableFactory.createUnaryCallable(
-            enrollDataSourcesTransportSettings,
-            settings.enrollDataSourcesSettings(),
+            enableDataTransferServiceTransportSettings,
+            settings.enableDataTransferServiceSettings(),
             clientContext);
-    this.unenrollDataSourcesCallable =
+    this.isDataTransferServiceEnabledCallable =
         callableFactory.createUnaryCallable(
-            unenrollDataSourcesTransportSettings,
-            settings.unenrollDataSourcesSettings(),
+            isDataTransferServiceEnabledTransportSettings,
+            settings.isDataTransferServiceEnabledSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -1195,8 +1206,8 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
     methodDescriptors.add(listTransferRunsMethodDescriptor);
     methodDescriptors.add(listTransferLogsMethodDescriptor);
     methodDescriptors.add(checkValidCredsMethodDescriptor);
-    methodDescriptors.add(enrollDataSourcesMethodDescriptor);
-    methodDescriptors.add(unenrollDataSourcesMethodDescriptor);
+    methodDescriptors.add(enableDataTransferServiceMethodDescriptor);
+    methodDescriptors.add(isDataTransferServiceEnabledMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1302,13 +1313,15 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
   }
 
   @Override
-  public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
-    return enrollDataSourcesCallable;
+  public UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable() {
+    return enableDataTransferServiceCallable;
   }
 
   @Override
-  public UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
-    return unenrollDataSourcesCallable;
+  public UnaryCallable<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable() {
+    return isDataTransferServiceEnabledCallable;
   }
 
   @Override

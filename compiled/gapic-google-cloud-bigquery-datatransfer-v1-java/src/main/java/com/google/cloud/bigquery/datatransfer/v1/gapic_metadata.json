@@ -64,8 +64,8 @@
             "DeleteTransferRun": {
               "methods": ["deleteTransferRun", "deleteTransferRun", "deleteTransferRun", "deleteTransferRunCallable"]
             },
-            "EnrollDataSources": {
-              "methods": ["enrollDataSources", "enrollDataSourcesCallable"]
+            "EnableDataTransferService": {
+              "methods": ["enableDataTransferService", "enableDataTransferServiceCallable"]
             },
             "GetDataSource": {
               "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
@@ -78,6 +78,9 @@
             },
             "GetTransferRun": {
               "methods": ["getTransferRun", "getTransferRun", "getTransferRun", "getTransferRunCallable"]
+            },
+            "IsDataTransferServiceEnabled": {
+              "methods": ["isDataTransferServiceEnabled", "isDataTransferServiceEnabledCallable"]
             },
             "ListDataSources": {
               "methods": ["listDataSources", "listDataSources", "listDataSources", "listDataSources", "listDataSourcesPagedCallable", "listDataSourcesCallable"]
@@ -99,9 +102,6 @@
             },
             "StartManualTransferRuns": {
               "methods": ["startManualTransferRuns", "startManualTransferRunsCallable"]
-            },
-            "UnenrollDataSources": {
-              "methods": ["unenrollDataSources", "unenrollDataSourcesCallable"]
             },
             "UpdateTransferConfig": {
               "methods": ["updateTransferConfig", "updateTransferConfig", "updateTransferConfigCallable"]

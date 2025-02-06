@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfigName;
+import java.util.HashMap;
 
 public class SyncStartManualTransferRuns {
 
@@ -41,6 +42,7 @@ public class SyncStartManualTransferRuns {
                   TransferConfigName.ofProjectLocationTransferConfigName(
                           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                       .toString())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       StartManualTransferRunsResponse response =
           dataTransferServiceClient.startManualTransferRuns(request);

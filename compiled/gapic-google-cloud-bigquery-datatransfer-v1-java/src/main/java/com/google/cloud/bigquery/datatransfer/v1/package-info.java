@@ -45,7 +45,9 @@
  *
  * <p>======================= DataTransferServiceClient =======================
  *
- * <p>Service Description: This API allows users to manage their data transfers into BigQuery.
+ * <p>Service Description: The Google BigQuery Data Transfer Service API enables BigQuery users to
+ * configure the transfer of their data from other Google Products into BigQuery. This service
+ * contains methods that are end user exposed. It backs up the frontend.
  *
  * <p>Sample for DataTransferServiceClient:
  *

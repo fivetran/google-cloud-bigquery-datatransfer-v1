@@ -16,30 +16,29 @@
 
 package com.google.cloud.bigquery.datatransfer.v1.samples;
 
-// [START bigquerydatatransfer_v1_generated_DataTransferService_ListTransferConfigs_Projectname_sync]
+// [START bigquerydatatransfer_v1_generated_DataTransferService_CreateTransferConfig_ParentnameTransferconfig_sync]
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
+import com.google.cloud.bigquery.datatransfer.v1.ParentName;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 
-public class SyncListTransferConfigsProjectname {
+public class SyncCreateTransferConfigParentnameTransferconfig {
 
   public static void main(String[] args) throws Exception {
-    syncListTransferConfigsProjectname();
+    syncCreateTransferConfigParentnameTransferconfig();
   }
 
-  public static void syncListTransferConfigsProjectname() throws Exception {
+  public static void syncCreateTransferConfigParentnameTransferconfig() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      ProjectName parent = ProjectName.of("[PROJECT]");
-      for (TransferConfig element :
-          dataTransferServiceClient.listTransferConfigs(parent).iterateAll()) {
-        // doThingsWith(element);
-      }
+      ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
+      TransferConfig transferConfig = TransferConfig.newBuilder().build();
+      TransferConfig response =
+          dataTransferServiceClient.createTransferConfig(parent, transferConfig);
     }
   }
 }
-// [END bigquerydatatransfer_v1_generated_DataTransferService_ListTransferConfigs_Projectname_sync]
+// [END bigquerydatatransfer_v1_generated_DataTransferService_CreateTransferConfig_ParentnameTransferconfig_sync]

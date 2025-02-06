@@ -52,9 +52,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_ = "";
   /**
    * <pre>
-   * Required. The BigQuery project id for which data sources should be
-   * returned. Must be in the form: `projects/{project_id}` or
-   * `projects/{project_id}/locations/{location_id}`
+   * Required. The BigQuery project id for which data sources should be returned.
+   * Must be in the form: `projects/{project_id}` or
+   * `projects/{project_id}/locations/{location_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -75,9 +75,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The BigQuery project id for which data sources should be
-   * returned. Must be in the form: `projects/{project_id}` or
-   * `projects/{project_id}/locations/{location_id}`
+   * Required. The BigQuery project id for which data sources should be returned.
+   * Must be in the form: `projects/{project_id}` or
+   * `projects/{project_id}/locations/{location_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -516,9 +516,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The BigQuery project id for which data sources should be
-     * returned. Must be in the form: `projects/{project_id}` or
-     * `projects/{project_id}/locations/{location_id}`
+     * Required. The BigQuery project id for which data sources should be returned.
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -538,9 +538,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id for which data sources should be
-     * returned. Must be in the form: `projects/{project_id}` or
-     * `projects/{project_id}/locations/{location_id}`
+     * Required. The BigQuery project id for which data sources should be returned.
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -561,9 +561,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id for which data sources should be
-     * returned. Must be in the form: `projects/{project_id}` or
-     * `projects/{project_id}/locations/{location_id}`
+     * Required. The BigQuery project id for which data sources should be returned.
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -580,9 +580,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id for which data sources should be
-     * returned. Must be in the form: `projects/{project_id}` or
-     * `projects/{project_id}/locations/{location_id}`
+     * Required. The BigQuery project id for which data sources should be returned.
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -596,9 +596,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The BigQuery project id for which data sources should be
-     * returned. Must be in the form: `projects/{project_id}` or
-     * `projects/{project_id}/locations/{location_id}`
+     * Required. The BigQuery project id for which data sources should be returned.
+     * Must be in the form: `projects/{project_id}` or
+     * `projects/{project_id}/locations/{location_id}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

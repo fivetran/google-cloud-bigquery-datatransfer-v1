@@ -16,36 +16,29 @@
 
 package com.google.cloud.bigquery.datatransfer.v1.samples;
 
-// [START bigquerydatatransfer_v1_generated_DataTransferService_EnrollDataSources_async]
-import com.google.api.core.ApiFuture;
+// [START bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_Parentname_sync]
+import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
-import com.google.protobuf.Empty;
-import java.util.ArrayList;
+import com.google.cloud.bigquery.datatransfer.v1.ParentName;
 
-public class AsyncEnrollDataSources {
+public class SyncListDataSourcesParentname {
 
   public static void main(String[] args) throws Exception {
-    asyncEnrollDataSources();
+    syncListDataSourcesParentname();
   }
 
-  public static void asyncEnrollDataSources() throws Exception {
+  public static void syncListDataSourcesParentname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      EnrollDataSourcesRequest request =
-          EnrollDataSourcesRequest.newBuilder()
-              .setName("name3373707")
-              .addAllDataSourceIds(new ArrayList<String>())
-              .build();
-      ApiFuture<Empty> future =
-          dataTransferServiceClient.enrollDataSourcesCallable().futureCall(request);
-      // Do something.
-      future.get();
+      ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
+      for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END bigquerydatatransfer_v1_generated_DataTransferService_EnrollDataSources_async]
+// [END bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_Parentname_sync]

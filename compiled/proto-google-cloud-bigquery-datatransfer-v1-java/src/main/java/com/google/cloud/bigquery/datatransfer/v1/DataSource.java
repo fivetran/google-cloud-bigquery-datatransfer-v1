@@ -6,7 +6,8 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
  * <pre>
- * Defines the properties and custom parameters for a data source.
+ * Represents data source metadata. Metadata is sufficient to
+ * render UI and request proper OAuth tokens.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSource}
@@ -43,6 +44,8 @@ private static final long serialVersionUID = 0L;
     helpUrl_ = "";
     authorizationType_ = 0;
     dataRefreshType_ = 0;
+    partnerLegalName_ = "";
+    redirectUrl_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -93,14 +96,6 @@ private static final long serialVersionUID = 0L;
      * <code>GOOGLE_PLUS_AUTHORIZATION_CODE = 2;</code>
      */
     GOOGLE_PLUS_AUTHORIZATION_CODE(2),
-    /**
-     * <pre>
-     * Use First Party OAuth.
-     * </pre>
-     *
-     * <code>FIRST_PARTY_OAUTH = 3;</code>
-     */
-    FIRST_PARTY_OAUTH(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -139,14 +134,6 @@ private static final long serialVersionUID = 0L;
      * <code>GOOGLE_PLUS_AUTHORIZATION_CODE = 2;</code>
      */
     public static final int GOOGLE_PLUS_AUTHORIZATION_CODE_VALUE = 2;
-    /**
-     * <pre>
-     * Use First Party OAuth.
-     * </pre>
-     *
-     * <code>FIRST_PARTY_OAUTH = 3;</code>
-     */
-    public static final int FIRST_PARTY_OAUTH_VALUE = 3;
 
 
     public final int getNumber() {
@@ -176,7 +163,6 @@ private static final long serialVersionUID = 0L;
         case 0: return AUTHORIZATION_TYPE_UNSPECIFIED;
         case 1: return AUTHORIZATION_CODE;
         case 2: return GOOGLE_PLUS_AUTHORIZATION_CODE;
-        case 3: return FIRST_PARTY_OAUTH;
         default: return null;
       }
     }
@@ -1063,6 +1049,100 @@ private static final long serialVersionUID = 0L;
     return minimumScheduleInterval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minimumScheduleInterval_;
   }
 
+  public static final int PARTNER_LEGAL_NAME_FIELD_NUMBER = 22;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object partnerLegalName_ = "";
+  /**
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   * @return The partnerLegalName.
+   */
+  @java.lang.Override
+  public java.lang.String getPartnerLegalName() {
+    java.lang.Object ref = partnerLegalName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      partnerLegalName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   * @return The bytes for partnerLegalName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPartnerLegalNameBytes() {
+    java.lang.Object ref = partnerLegalName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      partnerLegalName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REDIRECT_URL_FIELD_NUMBER = 23;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectUrl_ = "";
+  /**
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   * @return The redirectUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getRedirectUrl() {
+    java.lang.Object ref = redirectUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redirectUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   * @return The bytes for redirectUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRedirectUrlBytes() {
+    java.lang.Object ref = redirectUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      redirectUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1130,6 +1210,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(18, getMinimumScheduleInterval());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(partnerLegalName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 22, partnerLegalName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(redirectUrl_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 23, redirectUrl_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1209,6 +1295,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(18, getMinimumScheduleInterval());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(partnerLegalName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(22, partnerLegalName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(redirectUrl_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(23, redirectUrl_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1260,6 +1352,10 @@ private static final long serialVersionUID = 0L;
       if (!getMinimumScheduleInterval()
           .equals(other.getMinimumScheduleInterval())) return false;
     }
+    if (!getPartnerLegalName()
+        .equals(other.getPartnerLegalName())) return false;
+    if (!getRedirectUrl()
+        .equals(other.getRedirectUrl())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1316,6 +1412,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MINIMUM_SCHEDULE_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumScheduleInterval().hashCode();
     }
+    hash = (37 * hash) + PARTNER_LEGAL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPartnerLegalName().hashCode();
+    hash = (37 * hash) + REDIRECT_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getRedirectUrl().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1415,7 +1515,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Defines the properties and custom parameters for a data source.
+   * Represents data source metadata. Metadata is sufficient to
+   * render UI and request proper OAuth tokens.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSource}
@@ -1487,6 +1588,8 @@ private static final long serialVersionUID = 0L;
         minimumScheduleIntervalBuilder_.dispose();
         minimumScheduleIntervalBuilder_ = null;
       }
+      partnerLegalName_ = "";
+      redirectUrl_ = "";
       return this;
     }
 
@@ -1588,6 +1691,12 @@ private static final long serialVersionUID = 0L;
             ? minimumScheduleInterval_
             : minimumScheduleIntervalBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.partnerLegalName_ = partnerLegalName_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.redirectUrl_ = redirectUrl_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1701,6 +1810,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMinimumScheduleInterval()) {
         mergeMinimumScheduleInterval(other.getMinimumScheduleInterval());
+      }
+      if (!other.getPartnerLegalName().isEmpty()) {
+        partnerLegalName_ = other.partnerLegalName_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      if (!other.getRedirectUrl().isEmpty()) {
+        redirectUrl_ = other.redirectUrl_;
+        bitField0_ |= 0x00080000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1829,6 +1948,16 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00020000;
               break;
             } // case 146
+            case 178: {
+              partnerLegalName_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 178
+            case 186: {
+              redirectUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00080000;
+              break;
+            } // case 186
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3627,6 +3756,190 @@ private static final long serialVersionUID = 0L;
         minimumScheduleInterval_ = null;
       }
       return minimumScheduleIntervalBuilder_;
+    }
+
+    private java.lang.Object partnerLegalName_ = "";
+    /**
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     * @return The partnerLegalName.
+     */
+    public java.lang.String getPartnerLegalName() {
+      java.lang.Object ref = partnerLegalName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partnerLegalName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     * @return The bytes for partnerLegalName.
+     */
+    public com.google.protobuf.ByteString
+        getPartnerLegalNameBytes() {
+      java.lang.Object ref = partnerLegalName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partnerLegalName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     * @param value The partnerLegalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerLegalName(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      partnerLegalName_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPartnerLegalName() {
+      partnerLegalName_ = getDefaultInstance().getPartnerLegalName();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Partner's legal name of this data source
+     * </pre>
+     *
+     * <code>string partner_legal_name = 22;</code>
+     * @param value The bytes for partnerLegalName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerLegalNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      partnerLegalName_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object redirectUrl_ = "";
+    /**
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     * @return The redirectUrl.
+     */
+    public java.lang.String getRedirectUrl() {
+      java.lang.Object ref = redirectUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redirectUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     * @return The bytes for redirectUrl.
+     */
+    public com.google.protobuf.ByteString
+        getRedirectUrlBytes() {
+      java.lang.Object ref = redirectUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        redirectUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     * @param value The redirectUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedirectUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      redirectUrl_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRedirectUrl() {
+      redirectUrl_ = getDefaultInstance().getRedirectUrl();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Redirect URL to complete transfer config setup for 3rd party data sources.
+     * </pre>
+     *
+     * <code>string redirect_url = 23;</code>
+     * @param value The bytes for redirectUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedirectUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      redirectUrl_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.DataSource)

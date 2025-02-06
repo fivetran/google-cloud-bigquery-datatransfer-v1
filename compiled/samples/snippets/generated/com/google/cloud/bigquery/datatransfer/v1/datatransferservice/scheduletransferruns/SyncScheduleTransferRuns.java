@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfigName;
 import com.google.protobuf.Timestamp;
+import java.util.HashMap;
 
 public class SyncScheduleTransferRuns {
 
@@ -42,6 +43,7 @@ public class SyncScheduleTransferRuns {
                   TransferConfigName.ofProjectLocationTransferConfigName(
                           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                       .toString())
+              .putAllLabels(new HashMap<String, String>())
               .setStartTime(Timestamp.newBuilder().build())
               .setEndTime(Timestamp.newBuilder().build())
               .build();
