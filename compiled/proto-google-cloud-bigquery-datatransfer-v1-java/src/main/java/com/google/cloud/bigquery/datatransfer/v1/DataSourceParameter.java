@@ -6,7 +6,12 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
  * <pre>
- * A parameter used to define custom fields in a data source definition.
+ * Represents a data source parameter with validation rules, so that
+ * parameters can be rendered in the UI. These parameters are given to us by
+ * supported data sources, and include all needed information for rendering
+ * and validation.
+ * Thus, whoever uses this api can decide to generate either generic ui,
+ * or custom data source specific forms.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSourceParameter}
@@ -119,14 +124,6 @@ private static final long serialVersionUID = 0L;
      * <code>PLUS_PAGE = 6;</code>
      */
     PLUS_PAGE(6),
-    /**
-     * <pre>
-     * List of strings parameter.
-     * </pre>
-     *
-     * <code>LIST = 7;</code>
-     */
-    LIST(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -187,14 +184,6 @@ private static final long serialVersionUID = 0L;
      * <code>PLUS_PAGE = 6;</code>
      */
     public static final int PLUS_PAGE_VALUE = 6;
-    /**
-     * <pre>
-     * List of strings parameter.
-     * </pre>
-     *
-     * <code>LIST = 7;</code>
-     */
-    public static final int LIST_VALUE = 7;
 
 
     public final int getNumber() {
@@ -228,7 +217,6 @@ private static final long serialVersionUID = 0L;
         case 4: return BOOLEAN;
         case 5: return RECORD;
         case 6: return PLUS_PAGE;
-        case 7: return LIST;
         default: return null;
       }
     }
@@ -625,7 +613,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.DoubleValue maxValue_;
   /**
    * <pre>
-   * For integer and double values specifies maximum allowed value.
+   * For integer and double values specifies maxminum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -637,7 +625,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For integer and double values specifies maximum allowed value.
+   * For integer and double values specifies maxminum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -649,7 +637,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * For integer and double values specifies maximum allowed value.
+   * For integer and double values specifies maxminum allowed value.
    * </pre>
    *
    * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -1202,7 +1190,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A parameter used to define custom fields in a data source definition.
+   * Represents a data source parameter with validation rules, so that
+   * parameters can be rendered in the UI. These parameters are given to us by
+   * supported data sources, and include all needed information for rendering
+   * and validation.
+   * Thus, whoever uses this api can decide to generate either generic ui,
+   * or custom data source specific forms.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSourceParameter}
@@ -2487,7 +2480,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder> maxValueBuilder_;
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2498,7 +2491,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2513,7 +2506,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2533,7 +2526,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2551,7 +2544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2576,7 +2569,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2593,7 +2586,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2605,7 +2598,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>
@@ -2620,7 +2613,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * For integer and double values specifies maximum allowed value.
+     * For integer and double values specifies maxminum allowed value.
      * </pre>
      *
      * <code>.google.protobuf.DoubleValue max_value = 10;</code>

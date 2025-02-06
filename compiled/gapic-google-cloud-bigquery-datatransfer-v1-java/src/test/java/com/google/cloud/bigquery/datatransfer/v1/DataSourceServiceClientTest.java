@@ -104,6 +104,7 @@ public class DataSourceServiceClientTest {
                 RunName.ofProjectLocationTransferConfigRunName(
                         "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
                     .toString())
+            .putAllLabels(new HashMap<String, String>())
             .setScheduleTime(Timestamp.newBuilder().build())
             .setRunTime(Timestamp.newBuilder().build())
             .setErrorStatus(Status.newBuilder().build())
@@ -117,6 +118,7 @@ public class DataSourceServiceClientTest {
             .setSchedule("schedule-697920873")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
             .build();
     mockDataSourceService.addResponse(expectedResponse);
 

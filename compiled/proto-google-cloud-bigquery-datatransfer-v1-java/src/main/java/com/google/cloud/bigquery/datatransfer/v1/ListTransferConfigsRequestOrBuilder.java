@@ -10,7 +10,7 @@ public interface ListTransferConfigsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The BigQuery project id for which transfer configs
+   * Required. The BigQuery project id for which data sources
    * should be returned: `projects/{project_id}` or
    * `projects/{project_id}/locations/{location_id}`
    * </pre>
@@ -21,7 +21,7 @@ public interface ListTransferConfigsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The BigQuery project id for which transfer configs
+   * Required. The BigQuery project id for which data sources
    * should be returned: `projects/{project_id}` or
    * `projects/{project_id}/locations/{location_id}`
    * </pre>

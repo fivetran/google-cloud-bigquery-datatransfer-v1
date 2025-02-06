@@ -357,8 +357,8 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   }
 
   @Override
-  public void enrollDataSources(
-      EnrollDataSourcesRequest request, StreamObserver<Empty> responseObserver) {
+  public void enableDataTransferService(
+      EnableDataTransferServiceRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
@@ -370,7 +370,7 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EnrollDataSources, expected %s or %s",
+                  "Unrecognized response type %s for method EnableDataTransferService, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -378,12 +378,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   }
 
   @Override
-  public void unenrollDataSources(
-      UnenrollDataSourcesRequest request, StreamObserver<Empty> responseObserver) {
+  public void isDataTransferServiceEnabled(
+      IsDataTransferServiceEnabledRequest request,
+      StreamObserver<IsDataTransferServiceEnabledResponse> responseObserver) {
     Object response = responses.poll();
-    if (response instanceof Empty) {
+    if (response instanceof IsDataTransferServiceEnabledResponse) {
       requests.add(request);
-      responseObserver.onNext(((Empty) response));
+      responseObserver.onNext(((IsDataTransferServiceEnabledResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
@@ -391,9 +392,9 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UnenrollDataSources, expected %s or %s",
+                  "Unrecognized response type %s for method IsDataTransferServiceEnabled, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
+                  IsDataTransferServiceEnabledResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

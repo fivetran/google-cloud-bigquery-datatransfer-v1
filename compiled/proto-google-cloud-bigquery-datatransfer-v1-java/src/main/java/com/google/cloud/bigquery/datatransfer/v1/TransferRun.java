@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     state_ = 0;
     schedule_ = "";
     notificationPubsubTopic_ = "";
+    partnerToken_ = "";
   }
 
   @java.lang.Override
@@ -40,6 +41,18 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 22:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -94,13 +107,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_ = "";
   /**
    * <pre>
-   * Identifier. The resource name of the transfer run.
+   * The resource name of the transfer run.
    * Transfer run names have the form
    * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
    * The name is ignored when creating a transfer run.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -118,13 +131,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Identifier. The resource name of the transfer run.
+   * The resource name of the transfer run.
    * Transfer run names have the form
    * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
    * The name is ignored when creating a transfer run.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -140,6 +153,101 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 22;
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_LabelsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> labels_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * User labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 22;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 3;
@@ -383,11 +491,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct params_;
   /**
    * <pre>
-   * Output only. Parameters specific to each data source. For more information
-   * see the bq tab in the 'Setting up a data transfer' section for each data
-   * source. For example the parameters for Cloud Storage transfers are listed
-   * here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Output only. Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -399,11 +503,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Parameters specific to each data source. For more information
-   * see the bq tab in the 'Setting up a data transfer' section for each data
-   * source. For example the parameters for Cloud Storage transfers are listed
-   * here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Output only. Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -415,11 +515,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Parameters specific to each data source. For more information
-   * see the bq tab in the 'Setting up a data transfer' section for each data
-   * source. For example the parameters for Cloud Storage transfers are listed
-   * here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Output only. Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -642,10 +738,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes.
-   *
-   * The format for specifying a pubsub topic is:
-   * `projects/{project_id}/topics/{topic_id}`
+   * transfer run finishes
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -667,10 +760,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes.
-   *
-   * The format for specifying a pubsub topic is:
-   * `projects/{project_id}/topics/{topic_id}`
+   * transfer run finishes
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -735,6 +825,63 @@ private static final long serialVersionUID = 0L;
     return emailPreferences_ == null ? com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance() : emailPreferences_;
   }
 
+  public static final int PARTNER_TOKEN_FIELD_NUMBER = 28;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object partnerToken_ = "";
+  /**
+   * <pre>
+   * Output only. This is the same token initialized from TransferConfig.
+   * Partner token is a unique identifier used for identifying a transfer setup
+   * stored on external partner side. The token is opaque to DTS and can only be
+   * interpreted by partner. Partner data source should create a mapping between
+   * the config id and the token to validate that a transfer config/run is
+   * legitimate.
+   * </pre>
+   *
+   * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The partnerToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPartnerToken() {
+    java.lang.Object ref = partnerToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      partnerToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. This is the same token initialized from TransferConfig.
+   * Partner token is a unique identifier used for identifying a transfer setup
+   * stored on external partner side. The token is opaque to DTS and can only be
+   * interpreted by partner. Partner data source should create a mapping between
+   * the config id and the token to validate that a transfer config/run is
+   * legitimate.
+   * </pre>
+   *
+   * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for partnerToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPartnerTokenBytes() {
+    java.lang.Object ref = partnerToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      partnerToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -788,11 +935,20 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(21, getErrorStatus());
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetLabels(),
+        LabelsDefaultEntryHolder.defaultEntry,
+        22);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, notificationPubsubTopic_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(25, getEmailPreferences());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partnerToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, partnerToken_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -851,12 +1007,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(21, getErrorStatus());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, labels__);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, notificationPubsubTopic_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(25, getEmailPreferences());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partnerToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, partnerToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -875,6 +1044,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (!internalGetLabels().equals(
+        other.internalGetLabels())) return false;
     if (hasScheduleTime() != other.hasScheduleTime()) return false;
     if (hasScheduleTime()) {
       if (!getScheduleTime()
@@ -924,6 +1095,8 @@ private static final long serialVersionUID = 0L;
       if (!getEmailPreferences()
           .equals(other.getEmailPreferences())) return false;
     }
+    if (!getPartnerToken()
+        .equals(other.getPartnerToken())) return false;
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 2:
@@ -946,6 +1119,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     if (hasScheduleTime()) {
       hash = (37 * hash) + SCHEDULE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleTime().hashCode();
@@ -989,6 +1166,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EMAIL_PREFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getEmailPreferences().hashCode();
     }
+    hash = (37 * hash) + PARTNER_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPartnerToken().hashCode();
     switch (destinationCase_) {
       case 2:
         hash = (37 * hash) + DESTINATION_DATASET_ID_FIELD_NUMBER;
@@ -1110,6 +1289,28 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.bigquery.datatransfer.v1.TransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_TransferRun_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 22:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 22:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1146,6 +1347,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      internalGetMutableLabels().clear();
       scheduleTime_ = null;
       if (scheduleTimeBuilder_ != null) {
         scheduleTimeBuilder_.dispose();
@@ -1191,6 +1393,7 @@ private static final long serialVersionUID = 0L;
         emailPreferencesBuilder_.dispose();
         emailPreferencesBuilder_ = null;
       }
+      partnerToken_ = "";
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -1230,69 +1433,76 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.scheduleTime_ = scheduleTimeBuilder_ == null
             ? scheduleTime_
             : scheduleTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.runTime_ = runTimeBuilder_ == null
             ? runTime_
             : runTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.errorStatus_ = errorStatusBuilder_ == null
             ? errorStatus_
             : errorStatusBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.startTime_ = startTimeBuilder_ == null
             ? startTime_
             : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.endTime_ = endTimeBuilder_ == null
             ? endTime_
             : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null
             ? updateTime_
             : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.params_ = paramsBuilder_ == null
             ? params_
             : paramsBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.dataSourceId_ = dataSourceId_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.userId_ = userId_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.schedule_ = schedule_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.notificationPubsubTopic_ = notificationPubsubTopic_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.emailPreferences_ = emailPreferencesBuilder_ == null
             ? emailPreferences_
             : emailPreferencesBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.partnerToken_ = partnerToken_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1351,6 +1561,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      internalGetMutableLabels().mergeFrom(
+          other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       if (other.hasScheduleTime()) {
         mergeScheduleTime(other.getScheduleTime());
       }
@@ -1374,7 +1587,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDataSourceId().isEmpty()) {
         dataSourceId_ = other.dataSourceId_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1385,16 +1598,21 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getSchedule().isEmpty()) {
         schedule_ = other.schedule_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getNotificationPubsubTopic().isEmpty()) {
         notificationPubsubTopic_ = other.notificationPubsubTopic_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasEmailPreferences()) {
         mergeEmailPreferences(other.getEmailPreferences());
+      }
+      if (!other.getPartnerToken().isEmpty()) {
+        partnerToken_ = other.partnerToken_;
+        bitField0_ |= 0x00010000;
+        onChanged();
       }
       switch (other.getDestinationCase()) {
         case DESTINATION_DATASET_ID: {
@@ -1448,83 +1666,97 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getScheduleTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
               input.readMessage(
                   getStartTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             } // case 34
             case 42: {
               input.readMessage(
                   getEndTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             } // case 42
             case 50: {
               input.readMessage(
                   getUpdateTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               break;
             } // case 50
             case 58: {
               dataSourceId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               break;
             } // case 58
             case 64: {
               state_ = input.readEnum();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               break;
             } // case 64
             case 74: {
               input.readMessage(
                   getParamsFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             } // case 74
             case 82: {
               input.readMessage(
                   getRunTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             } // case 82
             case 88: {
               userId_ = input.readInt64();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               break;
             } // case 88
             case 98: {
               schedule_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               break;
             } // case 98
             case 170: {
               input.readMessage(
                   getErrorStatusFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               break;
             } // case 170
+            case 178: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              labels__ = input.readMessage(
+                  LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableLabels().getMutableMap().put(
+                  labels__.getKey(), labels__.getValue());
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 178
             case 186: {
               notificationPubsubTopic_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               break;
             } // case 186
             case 202: {
               input.readMessage(
                   getEmailPreferencesFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               break;
             } // case 202
+            case 226: {
+              partnerToken_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00010000;
+              break;
+            } // case 226
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1560,13 +1792,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Identifier. The resource name of the transfer run.
+     * The resource name of the transfer run.
      * Transfer run names have the form
      * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
      * The name is ignored when creating a transfer run.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1583,13 +1815,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifier. The resource name of the transfer run.
+     * The resource name of the transfer run.
      * Transfer run names have the form
      * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
      * The name is ignored when creating a transfer run.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1607,13 +1839,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifier. The resource name of the transfer run.
+     * The resource name of the transfer run.
      * Transfer run names have the form
      * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
      * The name is ignored when creating a transfer run.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1627,13 +1859,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifier. The resource name of the transfer run.
+     * The resource name of the transfer run.
      * Transfer run names have the form
      * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
      * The name is ignored when creating a transfer run.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1644,13 +1876,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Identifier. The resource name of the transfer run.
+     * The resource name of the transfer run.
      * Transfer run names have the form
      * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
      * The name is ignored when creating a transfer run.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1661,6 +1893,161 @@ private static final long serialVersionUID = 0L;
       name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> labels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return labels_;
+    }
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getLabelsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableLabels().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    public Builder removeLabels(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableLabels().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableLabels() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    public Builder putLabels(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableLabels().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     * <pre>
+     * User labels.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 22;</code>
+     */
+    public Builder putAllLabels(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1676,7 +2063,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
@@ -1709,7 +2096,7 @@ private static final long serialVersionUID = 0L;
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1727,7 +2114,7 @@ private static final long serialVersionUID = 0L;
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1740,7 +2127,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000004) != 0) &&
           scheduleTime_ != null &&
           scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getScheduleTimeBuilder().mergeFrom(value);
@@ -1751,7 +2138,7 @@ private static final long serialVersionUID = 0L;
         scheduleTimeBuilder_.mergeFrom(value);
       }
       if (scheduleTime_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1764,7 +2151,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
      */
     public Builder clearScheduleTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       scheduleTime_ = null;
       if (scheduleTimeBuilder_ != null) {
         scheduleTimeBuilder_.dispose();
@@ -1781,7 +2168,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
@@ -1834,7 +2221,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the runTime field is set.
      */
     public boolean hasRunTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
@@ -1869,7 +2256,7 @@ private static final long serialVersionUID = 0L;
       } else {
         runTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1888,7 +2275,7 @@ private static final long serialVersionUID = 0L;
       } else {
         runTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1902,7 +2289,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeRunTime(com.google.protobuf.Timestamp value) {
       if (runTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
+        if (((bitField0_ & 0x00000008) != 0) &&
           runTime_ != null &&
           runTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getRunTimeBuilder().mergeFrom(value);
@@ -1913,7 +2300,7 @@ private static final long serialVersionUID = 0L;
         runTimeBuilder_.mergeFrom(value);
       }
       if (runTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1927,7 +2314,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
      */
     public Builder clearRunTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       runTime_ = null;
       if (runTimeBuilder_ != null) {
         runTimeBuilder_.dispose();
@@ -1945,7 +2332,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp run_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRunTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }
@@ -1999,7 +2386,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the errorStatus field is set.
      */
     public boolean hasErrorStatus() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
@@ -2032,7 +2419,7 @@ private static final long serialVersionUID = 0L;
       } else {
         errorStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2050,7 +2437,7 @@ private static final long serialVersionUID = 0L;
       } else {
         errorStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2063,7 +2450,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeErrorStatus(com.google.rpc.Status value) {
       if (errorStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
+        if (((bitField0_ & 0x00000010) != 0) &&
           errorStatus_ != null &&
           errorStatus_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorStatusBuilder().mergeFrom(value);
@@ -2074,7 +2461,7 @@ private static final long serialVersionUID = 0L;
         errorStatusBuilder_.mergeFrom(value);
       }
       if (errorStatus_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2087,7 +2474,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error_status = 21;</code>
      */
     public Builder clearErrorStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       errorStatus_ = null;
       if (errorStatusBuilder_ != null) {
         errorStatusBuilder_.dispose();
@@ -2104,7 +2491,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error_status = 21;</code>
      */
     public com.google.rpc.Status.Builder getErrorStatusBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getErrorStatusFieldBuilder().getBuilder();
     }
@@ -2157,7 +2544,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
@@ -2192,7 +2579,7 @@ private static final long serialVersionUID = 0L;
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2211,7 +2598,7 @@ private static final long serialVersionUID = 0L;
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2225,7 +2612,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
+        if (((bitField0_ & 0x00000020) != 0) &&
           startTime_ != null &&
           startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -2236,7 +2623,7 @@ private static final long serialVersionUID = 0L;
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2250,7 +2637,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -2268,7 +2655,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -2323,7 +2710,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -2358,7 +2745,7 @@ private static final long serialVersionUID = 0L;
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2377,7 +2764,7 @@ private static final long serialVersionUID = 0L;
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2391,7 +2778,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0) &&
+        if (((bitField0_ & 0x00000040) != 0) &&
           endTime_ != null &&
           endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -2402,7 +2789,7 @@ private static final long serialVersionUID = 0L;
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2416,7 +2803,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -2434,7 +2821,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2488,7 +2875,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
@@ -2521,7 +2908,7 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2539,7 +2926,7 @@ private static final long serialVersionUID = 0L;
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2552,7 +2939,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           updateTime_ != null &&
           updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2563,7 +2950,7 @@ private static final long serialVersionUID = 0L;
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2576,7 +2963,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2593,7 +2980,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2638,26 +3025,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> paramsBuilder_;
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the params field is set.
      */
     public boolean hasParams() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2672,11 +3051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2690,17 +3065,13 @@ private static final long serialVersionUID = 0L;
       } else {
         paramsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2712,24 +3083,20 @@ private static final long serialVersionUID = 0L;
       } else {
         paramsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeParams(com.google.protobuf.Struct value) {
       if (paramsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0) &&
+        if (((bitField0_ & 0x00000100) != 0) &&
           params_ != null &&
           params_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getParamsBuilder().mergeFrom(value);
@@ -2740,24 +3107,20 @@ private static final long serialVersionUID = 0L;
         paramsBuilder_.mergeFrom(value);
       }
       if (params_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearParams() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       params_ = null;
       if (paramsBuilder_ != null) {
         paramsBuilder_.dispose();
@@ -2768,27 +3131,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Struct.Builder getParamsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2803,11 +3158,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Parameters specific to each data source. For more information
-     * see the bq tab in the 'Setting up a data transfer' section for each data
-     * source. For example the parameters for Cloud Storage transfers are listed
-     * here:
-     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+     * Output only. Data transfer specific parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2998,7 +3349,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       dataSourceId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3012,7 +3363,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDataSourceId() {
       dataSourceId_ = getDefaultInstance().getDataSourceId();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3030,7 +3381,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       dataSourceId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3058,7 +3409,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3088,7 +3439,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3102,7 +3453,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       state_ = 0;
       onChanged();
       return this;
@@ -3133,7 +3484,7 @@ private static final long serialVersionUID = 0L;
     public Builder setUserId(long value) {
 
       userId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3146,7 +3497,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       userId_ = 0L;
       onChanged();
       return this;
@@ -3219,7 +3570,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       schedule_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3237,7 +3588,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearSchedule() {
       schedule_ = getDefaultInstance().getSchedule();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3259,7 +3610,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       schedule_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3268,10 +3619,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes.
-     *
-     * The format for specifying a pubsub topic is:
-     * `projects/{project_id}/topics/{topic_id}`
+     * transfer run finishes
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3292,10 +3640,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes.
-     *
-     * The format for specifying a pubsub topic is:
-     * `projects/{project_id}/topics/{topic_id}`
+     * transfer run finishes
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3317,10 +3662,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes.
-     *
-     * The format for specifying a pubsub topic is:
-     * `projects/{project_id}/topics/{topic_id}`
+     * transfer run finishes
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3331,17 +3673,14 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       notificationPubsubTopic_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes.
-     *
-     * The format for specifying a pubsub topic is:
-     * `projects/{project_id}/topics/{topic_id}`
+     * transfer run finishes
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3349,17 +3688,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearNotificationPubsubTopic() {
       notificationPubsubTopic_ = getDefaultInstance().getNotificationPubsubTopic();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes.
-     *
-     * The format for specifying a pubsub topic is:
-     * `projects/{project_id}/topics/{topic_id}`
+     * transfer run finishes
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3371,7 +3707,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       notificationPubsubTopic_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3390,7 +3726,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the emailPreferences field is set.
      */
     public boolean hasEmailPreferences() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <pre>
@@ -3427,7 +3763,7 @@ private static final long serialVersionUID = 0L;
       } else {
         emailPreferencesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3447,7 +3783,7 @@ private static final long serialVersionUID = 0L;
       } else {
         emailPreferencesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3462,7 +3798,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEmailPreferences(com.google.cloud.bigquery.datatransfer.v1.EmailPreferences value) {
       if (emailPreferencesBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0) &&
+        if (((bitField0_ & 0x00008000) != 0) &&
           emailPreferences_ != null &&
           emailPreferences_ != com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.getDefaultInstance()) {
           getEmailPreferencesBuilder().mergeFrom(value);
@@ -3473,7 +3809,7 @@ private static final long serialVersionUID = 0L;
         emailPreferencesBuilder_.mergeFrom(value);
       }
       if (emailPreferences_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -3488,7 +3824,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearEmailPreferences() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       emailPreferences_ = null;
       if (emailPreferencesBuilder_ != null) {
         emailPreferencesBuilder_.dispose();
@@ -3507,7 +3843,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.bigquery.datatransfer.v1.EmailPreferences email_preferences = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.EmailPreferences.Builder getEmailPreferencesBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getEmailPreferencesFieldBuilder().getBuilder();
     }
@@ -3549,6 +3885,123 @@ private static final long serialVersionUID = 0L;
         emailPreferences_ = null;
       }
       return emailPreferencesBuilder_;
+    }
+
+    private java.lang.Object partnerToken_ = "";
+    /**
+     * <pre>
+     * Output only. This is the same token initialized from TransferConfig.
+     * Partner token is a unique identifier used for identifying a transfer setup
+     * stored on external partner side. The token is opaque to DTS and can only be
+     * interpreted by partner. Partner data source should create a mapping between
+     * the config id and the token to validate that a transfer config/run is
+     * legitimate.
+     * </pre>
+     *
+     * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The partnerToken.
+     */
+    public java.lang.String getPartnerToken() {
+      java.lang.Object ref = partnerToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partnerToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. This is the same token initialized from TransferConfig.
+     * Partner token is a unique identifier used for identifying a transfer setup
+     * stored on external partner side. The token is opaque to DTS and can only be
+     * interpreted by partner. Partner data source should create a mapping between
+     * the config id and the token to validate that a transfer config/run is
+     * legitimate.
+     * </pre>
+     *
+     * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for partnerToken.
+     */
+    public com.google.protobuf.ByteString
+        getPartnerTokenBytes() {
+      java.lang.Object ref = partnerToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        partnerToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. This is the same token initialized from TransferConfig.
+     * Partner token is a unique identifier used for identifying a transfer setup
+     * stored on external partner side. The token is opaque to DTS and can only be
+     * interpreted by partner. Partner data source should create a mapping between
+     * the config id and the token to validate that a transfer config/run is
+     * legitimate.
+     * </pre>
+     *
+     * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The partnerToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerToken(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      partnerToken_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. This is the same token initialized from TransferConfig.
+     * Partner token is a unique identifier used for identifying a transfer setup
+     * stored on external partner side. The token is opaque to DTS and can only be
+     * interpreted by partner. Partner data source should create a mapping between
+     * the config id and the token to validate that a transfer config/run is
+     * legitimate.
+     * </pre>
+     *
+     * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPartnerToken() {
+      partnerToken_ = getDefaultInstance().getPartnerToken();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. This is the same token initialized from TransferConfig.
+     * Partner token is a unique identifier used for identifying a transfer setup
+     * stored on external partner side. The token is opaque to DTS and can only be
+     * interpreted by partner. Partner data source should create a mapping between
+     * the config id and the token to validate that a transfer config/run is
+     * legitimate.
+     * </pre>
+     *
+     * <code>string partner_token = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for partnerToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPartnerTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      partnerToken_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

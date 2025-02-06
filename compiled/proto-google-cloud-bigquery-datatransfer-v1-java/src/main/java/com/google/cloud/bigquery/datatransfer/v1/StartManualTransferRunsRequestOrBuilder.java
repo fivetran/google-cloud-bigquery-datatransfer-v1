@@ -10,23 +10,23 @@ public interface StartManualTransferRunsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Transfer configuration name in the form:
+   * Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. Transfer configuration name in the form:
+   * Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
@@ -34,10 +34,61 @@ public interface StartManualTransferRunsRequestOrBuilder extends
 
   /**
    * <pre>
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  int getLabelsCount();
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  boolean containsLabels(
+      java.lang.String key);
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getLabels();
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getLabelsMap();
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  /* nullable */
+java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * User labels to add to the backfilled runs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 2;</code>
+   */
+  java.lang.String getLabelsOrThrow(
+      java.lang.String key);
+
+  /**
+   * <pre>
+   * Time range for the transfer runs that should be started.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -46,10 +97,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
   boolean hasRequestedTimeRange();
   /**
    * <pre>
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
+   * Time range for the transfer runs that should be started.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -58,10 +106,7 @@ public interface StartManualTransferRunsRequestOrBuilder extends
   com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange getRequestedTimeRange();
   /**
    * <pre>
-   * A time_range start and end timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_time_range must be a past time and cannot include future time
-   * values.
+   * Time range for the transfer runs that should be started.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest.TimeRange requested_time_range = 3;</code>
@@ -70,10 +115,8 @@ public interface StartManualTransferRunsRequestOrBuilder extends
 
   /**
    * <pre>
-   * A run_time timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
+   * Specific run_time for a transfer run to be started. The
+   * requested_run_time must not be in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -82,10 +125,8 @@ public interface StartManualTransferRunsRequestOrBuilder extends
   boolean hasRequestedRunTime();
   /**
    * <pre>
-   * A run_time timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
+   * Specific run_time for a transfer run to be started. The
+   * requested_run_time must not be in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>
@@ -94,10 +135,8 @@ public interface StartManualTransferRunsRequestOrBuilder extends
   com.google.protobuf.Timestamp getRequestedRunTime();
   /**
    * <pre>
-   * A run_time timestamp for historical data files or reports
-   * that are scheduled to be transferred by the scheduled transfer run.
-   * requested_run_time must be a past time and cannot include future time
-   * values.
+   * Specific run_time for a transfer run to be started. The
+   * requested_run_time must not be in the future.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp requested_run_time = 4;</code>

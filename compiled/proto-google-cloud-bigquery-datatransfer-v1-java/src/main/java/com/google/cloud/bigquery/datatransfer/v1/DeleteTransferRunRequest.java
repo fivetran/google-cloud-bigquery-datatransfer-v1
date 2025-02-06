@@ -49,9 +49,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_ = "";
   /**
    * <pre>
-   * Required. The field will contain name of the resource requested, for
-   * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-   * or
+   * Required. The field will contain name of the resource requested, for example:
+   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * </pre>
    *
@@ -73,9 +72,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The field will contain name of the resource requested, for
-   * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-   * or
+   * Required. The field will contain name of the resource requested, for example:
+   * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
    * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
    * </pre>
    *
@@ -430,9 +428,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for
-     * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * or
+     * Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
@@ -453,9 +450,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for
-     * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * or
+     * Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
@@ -477,9 +473,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for
-     * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * or
+     * Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
@@ -497,9 +492,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for
-     * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * or
+     * Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *
@@ -514,9 +508,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for
-     * example: `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}`
-     * or
+     * Required. The field will contain name of the resource requested, for example:
+     * `projects/{project_id}/transferConfigs/{config_id}/runs/{run_id}` or
      * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}/runs/{run_id}`
      * </pre>
      *

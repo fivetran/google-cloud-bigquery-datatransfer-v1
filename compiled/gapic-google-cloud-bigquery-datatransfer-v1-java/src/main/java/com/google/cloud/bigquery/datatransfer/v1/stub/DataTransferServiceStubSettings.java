@@ -54,10 +54,12 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
-import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
@@ -73,7 +75,6 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferMessage;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
-import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -145,7 +146,12 @@ import javax.annotation.Generated;
 public class DataTransferServiceStubSettings extends StubSettings<DataTransferServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/bigquery")
+          .add("https://www.googleapis.com/auth/bigquery.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .build();
 
   private final UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings;
   private final PagedCallSettings<
@@ -175,8 +181,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferLogsSettings;
   private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings;
-  private final UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings;
-  private final UnaryCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesSettings;
+  private final UnaryCallSettings<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceSettings;
+  private final UnaryCallSettings<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -548,14 +557,17 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     return checkValidCredsSettings;
   }
 
-  /** Returns the object with the settings used for calls to enrollDataSources. */
-  public UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
-    return enrollDataSourcesSettings;
+  /** Returns the object with the settings used for calls to enableDataTransferService. */
+  public UnaryCallSettings<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceSettings() {
+    return enableDataTransferServiceSettings;
   }
 
-  /** Returns the object with the settings used for calls to unenrollDataSources. */
-  public UnaryCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesSettings() {
-    return unenrollDataSourcesSettings;
+  /** Returns the object with the settings used for calls to isDataTransferServiceEnabled. */
+  public UnaryCallSettings<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledSettings() {
+    return isDataTransferServiceEnabledSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -694,8 +706,9 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     listTransferRunsSettings = settingsBuilder.listTransferRunsSettings().build();
     listTransferLogsSettings = settingsBuilder.listTransferLogsSettings().build();
     checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
-    enrollDataSourcesSettings = settingsBuilder.enrollDataSourcesSettings().build();
-    unenrollDataSourcesSettings = settingsBuilder.unenrollDataSourcesSettings().build();
+    enableDataTransferServiceSettings = settingsBuilder.enableDataTransferServiceSettings().build();
+    isDataTransferServiceEnabledSettings =
+        settingsBuilder.isDataTransferServiceEnabledSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -739,10 +752,11 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         listTransferLogsSettings;
     private final UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings;
-    private final UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty>
-        enrollDataSourcesSettings;
-    private final UnaryCallSettings.Builder<UnenrollDataSourcesRequest, Empty>
-        unenrollDataSourcesSettings;
+    private final UnaryCallSettings.Builder<EnableDataTransferServiceRequest, Empty>
+        enableDataTransferServiceSettings;
+    private final UnaryCallSettings.Builder<
+            IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+        isDataTransferServiceEnabledSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -815,8 +829,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferRunsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_RUNS_PAGE_STR_FACT);
       listTransferLogsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_LOGS_PAGE_STR_FACT);
       checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      enrollDataSourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      unenrollDataSourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      enableDataTransferServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      isDataTransferServiceEnabledSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -836,8 +850,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               listTransferRunsSettings,
               listTransferLogsSettings,
               checkValidCredsSettings,
-              enrollDataSourcesSettings,
-              unenrollDataSourcesSettings,
+              enableDataTransferServiceSettings,
+              isDataTransferServiceEnabledSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -860,8 +874,9 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferRunsSettings = settings.listTransferRunsSettings.toBuilder();
       listTransferLogsSettings = settings.listTransferLogsSettings.toBuilder();
       checkValidCredsSettings = settings.checkValidCredsSettings.toBuilder();
-      enrollDataSourcesSettings = settings.enrollDataSourcesSettings.toBuilder();
-      unenrollDataSourcesSettings = settings.unenrollDataSourcesSettings.toBuilder();
+      enableDataTransferServiceSettings = settings.enableDataTransferServiceSettings.toBuilder();
+      isDataTransferServiceEnabledSettings =
+          settings.isDataTransferServiceEnabledSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -881,8 +896,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               listTransferRunsSettings,
               listTransferLogsSettings,
               checkValidCredsSettings,
-              enrollDataSourcesSettings,
-              unenrollDataSourcesSettings,
+              enableDataTransferServiceSettings,
+              isDataTransferServiceEnabledSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -983,12 +998,12 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .enrollDataSourcesSettings()
+          .enableDataTransferServiceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
-          .unenrollDataSourcesSettings()
+          .isDataTransferServiceEnabledSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1113,15 +1128,17 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       return checkValidCredsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to enrollDataSources. */
-    public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
-      return enrollDataSourcesSettings;
+    /** Returns the builder for the settings used for calls to enableDataTransferService. */
+    public UnaryCallSettings.Builder<EnableDataTransferServiceRequest, Empty>
+        enableDataTransferServiceSettings() {
+      return enableDataTransferServiceSettings;
     }
 
-    /** Returns the builder for the settings used for calls to unenrollDataSources. */
-    public UnaryCallSettings.Builder<UnenrollDataSourcesRequest, Empty>
-        unenrollDataSourcesSettings() {
-      return unenrollDataSourcesSettings;
+    /** Returns the builder for the settings used for calls to isDataTransferServiceEnabled. */
+    public UnaryCallSettings.Builder<
+            IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+        isDataTransferServiceEnabledSettings() {
+      return isDataTransferServiceEnabledSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

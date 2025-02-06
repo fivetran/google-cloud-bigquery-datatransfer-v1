@@ -19,7 +19,7 @@ package com.google.cloud.bigquery.datatransfer.v1.samples;
 // [START bigquerydatatransfer_v1_generated_DataTransferService_CreateTransferConfig_sync]
 import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
+import com.google.cloud.bigquery.datatransfer.v1.ParentName;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 
 public class SyncCreateTransferConfig {
@@ -37,7 +37,7 @@ public class SyncCreateTransferConfig {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
       CreateTransferConfigRequest request =
           CreateTransferConfigRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
               .setTransferConfig(TransferConfig.newBuilder().build())
               .setAuthorizationCode("authorizationCode742596102")
               .setVersionInfo("versionInfo688769446")

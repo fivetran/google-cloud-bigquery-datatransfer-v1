@@ -6,22 +6,21 @@ package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
  * <pre>
- * A request to delete data transfer information. All associated transfer runs
- * and log messages will be deleted as well.
+ * A request to enable data transfer service for a project.
  * </pre>
  *
- * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest}
+ * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest}
  */
-public final class DeleteTransferConfigRequest extends
+public final class EnableDataTransferServiceRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest)
-    DeleteTransferConfigRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest)
+    EnableDataTransferServiceRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use DeleteTransferConfigRequest.newBuilder() to construct.
-  private DeleteTransferConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use EnableDataTransferServiceRequest.newBuilder() to construct.
+  private EnableDataTransferServiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DeleteTransferConfigRequest() {
+  private EnableDataTransferServiceRequest() {
     name_ = "";
   }
 
@@ -29,20 +28,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new DeleteTransferConfigRequest();
+    return new EnableDataTransferServiceRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DeleteTransferConfigRequest_descriptor;
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_EnableDataTransferServiceRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DeleteTransferConfigRequest_fieldAccessorTable
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_EnableDataTransferServiceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.class, com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.Builder.class);
+            com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.class, com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -50,12 +49,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_ = "";
   /**
    * <pre>
-   * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}` or
-   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+   * The name of the project resource in the form:
+   * `projects/{project_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -73,12 +71,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The field will contain name of the resource requested, for example:
-   * `projects/{project_id}/transferConfigs/{config_id}` or
-   * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+   * The name of the project resource in the form:
+   * `projects/{project_id}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -135,10 +132,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest)) {
+    if (!(obj instanceof com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest other = (com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest) obj;
+    com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest other = (com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest) obj;
 
     if (!getName()
         .equals(other.getName())) return false;
@@ -160,44 +157,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(byte[] data)
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -205,26 +202,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseDelimitedFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest parseFrom(
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -237,7 +234,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -254,30 +251,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A request to delete data transfer information. All associated transfer runs
-   * and log messages will be deleted as well.
+   * A request to enable data transfer service for a project.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest}
+   * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest)
-      com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest)
+      com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DeleteTransferConfigRequest_descriptor;
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_EnableDataTransferServiceRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DeleteTransferConfigRequest_fieldAccessorTable
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_EnableDataTransferServiceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.class, com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.Builder.class);
+              com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.class, com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.newBuilder()
+    // Construct using com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.newBuilder()
     private Builder() {
 
     }
@@ -298,17 +294,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DeleteTransferConfigRequest_descriptor;
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_EnableDataTransferServiceRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest getDefaultInstanceForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.getDefaultInstance();
+    public com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest getDefaultInstanceForType() {
+      return com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest build() {
-      com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest result = buildPartial();
+    public com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest build() {
+      com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -316,14 +312,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest buildPartial() {
-      com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest result = new com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest(this);
+    public com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest buildPartial() {
+      com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest result = new com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest result) {
+    private void buildPartial0(com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
@@ -364,16 +360,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest) {
-        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest)other);
+      if (other instanceof com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest) {
+        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest other) {
-      if (other == com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest other) {
+      if (other == com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
@@ -430,12 +426,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}` or
-     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * The name of the project resource in the form:
+     * `projects/{project_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -452,12 +447,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}` or
-     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * The name of the project resource in the form:
+     * `projects/{project_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -475,12 +469,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}` or
-     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * The name of the project resource in the form:
+     * `projects/{project_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -494,12 +487,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}` or
-     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * The name of the project resource in the form:
+     * `projects/{project_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -510,12 +502,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The field will contain name of the resource requested, for example:
-     * `projects/{project_id}/transferConfigs/{config_id}` or
-     * `projects/{project_id}/locations/{location_id}/transferConfigs/{config_id}`
+     * The name of the project resource in the form:
+     * `projects/{project_id}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>string name = 1;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -541,23 +532,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest)
-  private static final com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest)
+  private static final com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest();
   }
 
-  public static com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest getDefaultInstance() {
+  public static com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteTransferConfigRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteTransferConfigRequest>() {
+  private static final com.google.protobuf.Parser<EnableDataTransferServiceRequest>
+      PARSER = new com.google.protobuf.AbstractParser<EnableDataTransferServiceRequest>() {
     @java.lang.Override
-    public DeleteTransferConfigRequest parsePartialFrom(
+    public EnableDataTransferServiceRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -576,17 +567,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<DeleteTransferConfigRequest> parser() {
+  public static com.google.protobuf.Parser<EnableDataTransferServiceRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteTransferConfigRequest> getParserForType() {
+  public com.google.protobuf.Parser<EnableDataTransferServiceRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest getDefaultInstanceForType() {
+  public com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

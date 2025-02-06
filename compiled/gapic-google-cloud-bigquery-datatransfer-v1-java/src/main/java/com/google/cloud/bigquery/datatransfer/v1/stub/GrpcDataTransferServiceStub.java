@@ -35,10 +35,12 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
-import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
@@ -53,7 +55,6 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
-import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -239,26 +240,30 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<EnrollDataSourcesRequest, Empty>
-      enrollDataSourcesMethodDescriptor =
-          MethodDescriptor.<EnrollDataSourcesRequest, Empty>newBuilder()
+  private static final MethodDescriptor<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceMethodDescriptor =
+          MethodDescriptor.<EnableDataTransferServiceRequest, Empty>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/EnrollDataSources")
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/EnableDataTransferService")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(EnrollDataSourcesRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(EnableDataTransferServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<UnenrollDataSourcesRequest, Empty>
-      unenrollDataSourcesMethodDescriptor =
-          MethodDescriptor.<UnenrollDataSourcesRequest, Empty>newBuilder()
+  private static final MethodDescriptor<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledMethodDescriptor =
+          MethodDescriptor
+              .<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+                  newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/UnenrollDataSources")
+                  "google.cloud.bigquery.datatransfer.v1.DataTransferService/IsDataTransferServiceEnabled")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(UnenrollDataSourcesRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+                  ProtoUtils.marshaller(IsDataTransferServiceEnabledRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IsDataTransferServiceEnabledResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -311,8 +316,11 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       listTransferLogsPagedCallable;
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
-  private final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable;
-  private final UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable;
+  private final UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable;
+  private final UnaryCallable<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -514,26 +522,30 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                       return builder.build();
                     })
                 .build();
-    GrpcCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
-        GrpcCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()
-            .setMethodDescriptor(enrollDataSourcesMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesTransportSettings =
-        GrpcCallSettings.<UnenrollDataSourcesRequest, Empty>newBuilder()
-            .setMethodDescriptor(unenrollDataSourcesMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
+    GrpcCallSettings<EnableDataTransferServiceRequest, Empty>
+        enableDataTransferServiceTransportSettings =
+            GrpcCallSettings.<EnableDataTransferServiceRequest, Empty>newBuilder()
+                .setMethodDescriptor(enableDataTransferServiceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+        isDataTransferServiceEnabledTransportSettings =
+            GrpcCallSettings
+                .<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+                    newBuilder()
+                .setMethodDescriptor(isDataTransferServiceEnabledMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -627,15 +639,15 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     this.checkValidCredsCallable =
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
-    this.enrollDataSourcesCallable =
+    this.enableDataTransferServiceCallable =
         callableFactory.createUnaryCallable(
-            enrollDataSourcesTransportSettings,
-            settings.enrollDataSourcesSettings(),
+            enableDataTransferServiceTransportSettings,
+            settings.enableDataTransferServiceSettings(),
             clientContext);
-    this.unenrollDataSourcesCallable =
+    this.isDataTransferServiceEnabledCallable =
         callableFactory.createUnaryCallable(
-            unenrollDataSourcesTransportSettings,
-            settings.unenrollDataSourcesSettings(),
+            isDataTransferServiceEnabledTransportSettings,
+            settings.isDataTransferServiceEnabledSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -755,13 +767,15 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   }
 
   @Override
-  public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
-    return enrollDataSourcesCallable;
+  public UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable() {
+    return enableDataTransferServiceCallable;
   }
 
   @Override
-  public UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
-    return unenrollDataSourcesCallable;
+  public UnaryCallable<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable() {
+    return isDataTransferServiceEnabledCallable;
   }
 
   @Override

@@ -10,9 +10,9 @@ public interface ListDataSourcesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The BigQuery project id for which data sources should be
-   * returned. Must be in the form: `projects/{project_id}` or
-   * `projects/{project_id}/locations/{location_id}`
+   * Required. The BigQuery project id for which data sources should be returned.
+   * Must be in the form: `projects/{project_id}` or
+   * `projects/{project_id}/locations/{location_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -21,9 +21,9 @@ public interface ListDataSourcesRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The BigQuery project id for which data sources should be
-   * returned. Must be in the form: `projects/{project_id}` or
-   * `projects/{project_id}/locations/{location_id}`
+   * Required. The BigQuery project id for which data sources should be returned.
+   * Must be in the form: `projects/{project_id}` or
+   * `projects/{project_id}/locations/{location_id}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

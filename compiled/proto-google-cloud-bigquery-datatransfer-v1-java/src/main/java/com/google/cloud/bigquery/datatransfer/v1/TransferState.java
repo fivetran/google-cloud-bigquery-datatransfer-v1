@@ -15,7 +15,7 @@ public enum TransferState
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * State placeholder (0).
+   * State placeholder.
    * </pre>
    *
    * <code>TRANSFER_STATE_UNSPECIFIED = 0;</code>
@@ -24,7 +24,7 @@ public enum TransferState
   /**
    * <pre>
    * Data transfer is scheduled and is waiting to be picked up by
-   * data transfer backend (2).
+   * data transfer backend.
    * </pre>
    *
    * <code>PENDING = 2;</code>
@@ -32,7 +32,7 @@ public enum TransferState
   PENDING(2),
   /**
    * <pre>
-   * Data transfer is in progress (3).
+   * Data transfer is in progress.
    * </pre>
    *
    * <code>RUNNING = 3;</code>
@@ -40,7 +40,7 @@ public enum TransferState
   RUNNING(3),
   /**
    * <pre>
-   * Data transfer completed successfully (4).
+   * Data transfer completed successfully.
    * </pre>
    *
    * <code>SUCCEEDED = 4;</code>
@@ -48,7 +48,7 @@ public enum TransferState
   SUCCEEDED(4),
   /**
    * <pre>
-   * Data transfer failed (5).
+   * Data transfer failed.
    * </pre>
    *
    * <code>FAILED = 5;</code>
@@ -56,7 +56,7 @@ public enum TransferState
   FAILED(5),
   /**
    * <pre>
-   * Data transfer is cancelled (6).
+   * Data transfer is cancelled.
    * </pre>
    *
    * <code>CANCELLED = 6;</code>
@@ -67,7 +67,7 @@ public enum TransferState
 
   /**
    * <pre>
-   * State placeholder (0).
+   * State placeholder.
    * </pre>
    *
    * <code>TRANSFER_STATE_UNSPECIFIED = 0;</code>
@@ -76,7 +76,7 @@ public enum TransferState
   /**
    * <pre>
    * Data transfer is scheduled and is waiting to be picked up by
-   * data transfer backend (2).
+   * data transfer backend.
    * </pre>
    *
    * <code>PENDING = 2;</code>
@@ -84,7 +84,7 @@ public enum TransferState
   public static final int PENDING_VALUE = 2;
   /**
    * <pre>
-   * Data transfer is in progress (3).
+   * Data transfer is in progress.
    * </pre>
    *
    * <code>RUNNING = 3;</code>
@@ -92,7 +92,7 @@ public enum TransferState
   public static final int RUNNING_VALUE = 3;
   /**
    * <pre>
-   * Data transfer completed successfully (4).
+   * Data transfer completed successfully.
    * </pre>
    *
    * <code>SUCCEEDED = 4;</code>
@@ -100,7 +100,7 @@ public enum TransferState
   public static final int SUCCEEDED_VALUE = 4;
   /**
    * <pre>
-   * Data transfer failed (5).
+   * Data transfer failed.
    * </pre>
    *
    * <code>FAILED = 5;</code>
@@ -108,7 +108,7 @@ public enum TransferState
   public static final int FAILED_VALUE = 5;
   /**
    * <pre>
-   * Data transfer is cancelled (6).
+   * Data transfer is cancelled.
    * </pre>
    *
    * <code>CANCELLED = 6;</code>

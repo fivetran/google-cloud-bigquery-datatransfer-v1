@@ -188,14 +188,19 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     return ((DataTransferServiceStubSettings) getStubSettings()).checkValidCredsSettings();
   }
 
-  /** Returns the object with the settings used for calls to enrollDataSources. */
-  public UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).enrollDataSourcesSettings();
+  /** Returns the object with the settings used for calls to enableDataTransferService. */
+  public UnaryCallSettings<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings())
+        .enableDataTransferServiceSettings();
   }
 
-  /** Returns the object with the settings used for calls to unenrollDataSources. */
-  public UnaryCallSettings<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesSettings() {
-    return ((DataTransferServiceStubSettings) getStubSettings()).unenrollDataSourcesSettings();
+  /** Returns the object with the settings used for calls to isDataTransferServiceEnabled. */
+  public UnaryCallSettings<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings())
+        .isDataTransferServiceEnabledSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -414,15 +419,17 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       return getStubSettingsBuilder().checkValidCredsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to enrollDataSources. */
-    public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
-      return getStubSettingsBuilder().enrollDataSourcesSettings();
+    /** Returns the builder for the settings used for calls to enableDataTransferService. */
+    public UnaryCallSettings.Builder<EnableDataTransferServiceRequest, Empty>
+        enableDataTransferServiceSettings() {
+      return getStubSettingsBuilder().enableDataTransferServiceSettings();
     }
 
-    /** Returns the builder for the settings used for calls to unenrollDataSources. */
-    public UnaryCallSettings.Builder<UnenrollDataSourcesRequest, Empty>
-        unenrollDataSourcesSettings() {
-      return getStubSettingsBuilder().unenrollDataSourcesSettings();
+    /** Returns the builder for the settings used for calls to isDataTransferServiceEnabled. */
+    public UnaryCallSettings.Builder<
+            IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+        isDataTransferServiceEnabledSettings() {
+      return getStubSettingsBuilder().isDataTransferServiceEnabledSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

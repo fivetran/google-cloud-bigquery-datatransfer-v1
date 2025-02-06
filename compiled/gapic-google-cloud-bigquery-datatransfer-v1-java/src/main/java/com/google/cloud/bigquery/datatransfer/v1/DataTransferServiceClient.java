@@ -41,7 +41,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: This API allows users to manage their data transfers into BigQuery.
+ * Service Description: The Google BigQuery Data Transfer Service API enables BigQuery users to
+ * configure the transfer of their data from other Google Products into BigQuery. This service
+ * contains methods that are end user exposed. It backs up the frontend.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -73,7 +75,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDataSource</td>
- *      <td><p> Retrieves a supported data source and returns its settings.</td>
+ *      <td><p> Retrieves a supported data source and returns its settings, which can be used for UI rendering.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -92,7 +94,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDataSources</td>
- *      <td><p> Lists supported data sources and returns their settings.</td>
+ *      <td><p> Lists supported data sources and returns their settings, which can be used for UI rendering.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -101,7 +103,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> listDataSources(LocationName parent)
- *           <li><p> listDataSources(ProjectName parent)
+ *           <li><p> listDataSources(ParentName parent)
  *           <li><p> listDataSources(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -122,7 +124,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> createTransferConfig(LocationName parent, TransferConfig transferConfig)
- *           <li><p> createTransferConfig(ProjectName parent, TransferConfig transferConfig)
+ *           <li><p> createTransferConfig(ParentName parent, TransferConfig transferConfig)
  *           <li><p> createTransferConfig(String parent, TransferConfig transferConfig)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -189,7 +191,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTransferConfigs</td>
- *      <td><p> Returns information about all transfer configs owned by a project in the specified location.</td>
+ *      <td><p> Returns information about all data transfers in the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -198,7 +200,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> listTransferConfigs(LocationName parent)
- *           <li><p> listTransferConfigs(ProjectName parent)
+ *           <li><p> listTransferConfigs(ParentName parent)
  *           <li><p> listTransferConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -281,7 +283,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTransferRuns</td>
- *      <td><p> Returns information about running and completed transfer runs.</td>
+ *      <td><p> Returns information about running and completed jobs.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -301,7 +303,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListTransferLogs</td>
- *      <td><p> Returns log messages for the transfer run.</td>
+ *      <td><p> Returns user facing log messages for the data transfer run.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -321,7 +323,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CheckValidCreds</td>
- *      <td><p> Returns true if valid credentials exist for the given data source and requesting user.</td>
+ *      <td><p> Returns true if valid credentials exist for the given data source and requesting user. Some data sources doesn't support service account, so we need to talk to them on behalf of the end user. This API just checks whether we have OAuth token for the particular user, which is a pre-requisite before user can create a transfer config.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -339,30 +341,30 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> EnrollDataSources</td>
- *      <td><p> Enroll data sources in a user project. This allows users to create transfer configurations for these data sources. They will also appear in the ListDataSources RPC and as such, will appear in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers).</td>
+ *      <td><p> EnableDataTransferService</td>
+ *      <td><p> Enables data transfer service for a given project. This method requires the additional scope of 'https://www.googleapis.com/auth/cloudplatformprojects' to manage the cloud project permissions.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> enrollDataSources(EnrollDataSourcesRequest request)
+ *           <li><p> enableDataTransferService(EnableDataTransferServiceRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li><p> enrollDataSourcesCallable()
+ *           <li><p> enableDataTransferServiceCallable()
  *      </ul>
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> UnenrollDataSources</td>
- *      <td><p> Unenroll data sources in a user project. This allows users to remove transfer configurations for these data sources. They will no longer appear in the ListDataSources RPC and will also no longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery). Data transfers configurations of unenrolled data sources will not be scheduled.</td>
+ *      <td><p> IsDataTransferServiceEnabled</td>
+ *      <td><p> Returns true if data transfer is enabled for a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> unenrollDataSources(UnenrollDataSourcesRequest request)
+ *           <li><p> isDataTransferServiceEnabled(IsDataTransferServiceEnabledRequest request)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
- *           <li><p> unenrollDataSourcesCallable()
+ *           <li><p> isDataTransferServiceEnabledCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -505,7 +507,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings.
+   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -536,7 +538,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings.
+   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -564,7 +566,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings.
+   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -595,7 +597,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a supported data source and returns its settings.
+   * Retrieves a supported data source and returns its settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -626,7 +628,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings.
+   * Lists supported data sources and returns their settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -645,7 +647,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BigQuery project id for which data sources should be returned. Must
-   *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
+   *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataSourcesPagedResponse listDataSources(LocationName parent) {
@@ -658,7 +660,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings.
+   * Lists supported data sources and returns their settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -669,7 +671,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
    *   for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -677,10 +679,10 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BigQuery project id for which data sources should be returned. Must
-   *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
+   *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSourcesPagedResponse listDataSources(ProjectName parent) {
+  public final ListDataSourcesPagedResponse listDataSources(ParentName parent) {
     ListDataSourcesRequest request =
         ListDataSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -690,7 +692,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings.
+   * Lists supported data sources and returns their settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -701,7 +703,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String parent = ParentName.ofProjectName("[PROJECT]").toString();
    *   for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -709,7 +711,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The BigQuery project id for which data sources should be returned. Must
-   *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
+   *     be in the form: `projects/{project_id}` or `projects/{project_id}/locations/{location_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataSourcesPagedResponse listDataSources(String parent) {
@@ -719,7 +721,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings.
+   * Lists supported data sources and returns their settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -732,7 +734,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -751,7 +753,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings.
+   * Lists supported data sources and returns their settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -764,7 +766,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -784,7 +786,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists supported data sources and returns their settings.
+   * Lists supported data sources and returns their settings, which can be used for UI rendering.
    *
    * <p>Sample code:
    *
@@ -797,7 +799,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListDataSourcesRequest request =
    *       ListDataSourcesRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
    *           .build();
@@ -872,7 +874,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
    *   TransferConfig response =
    *       dataTransferServiceClient.createTransferConfig(parent, transferConfig);
@@ -887,7 +889,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransferConfig createTransferConfig(
-      ProjectName parent, TransferConfig transferConfig) {
+      ParentName parent, TransferConfig transferConfig) {
     CreateTransferConfigRequest request =
         CreateTransferConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -909,7 +911,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String parent = ParentName.ofProjectName("[PROJECT]").toString();
    *   TransferConfig transferConfig = TransferConfig.newBuilder().build();
    *   TransferConfig response =
    *       dataTransferServiceClient.createTransferConfig(parent, transferConfig);
@@ -947,7 +949,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CreateTransferConfigRequest request =
    *       CreateTransferConfigRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .setTransferConfig(TransferConfig.newBuilder().build())
    *           .setAuthorizationCode("authorizationCode742596102")
    *           .setVersionInfo("versionInfo688769446")
@@ -979,7 +981,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   CreateTransferConfigRequest request =
    *       CreateTransferConfigRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .setTransferConfig(TransferConfig.newBuilder().build())
    *           .setAuthorizationCode("authorizationCode742596102")
    *           .setVersionInfo("versionInfo688769446")
@@ -1349,7 +1351,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all transfer configs owned by a project in the specified location.
+   * Returns information about all data transfers in the project.
    *
    * <p>Sample code:
    *
@@ -1368,7 +1370,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The BigQuery project id for which transfer configs should be returned:
+   * @param parent Required. The BigQuery project id for which data sources should be returned:
    *     `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1382,7 +1384,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all transfer configs owned by a project in the specified location.
+   * Returns information about all data transfers in the project.
    *
    * <p>Sample code:
    *
@@ -1393,7 +1395,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
    *   for (TransferConfig element :
    *       dataTransferServiceClient.listTransferConfigs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1401,11 +1403,11 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The BigQuery project id for which transfer configs should be returned:
+   * @param parent Required. The BigQuery project id for which data sources should be returned:
    *     `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransferConfigsPagedResponse listTransferConfigs(ProjectName parent) {
+  public final ListTransferConfigsPagedResponse listTransferConfigs(ParentName parent) {
     ListTransferConfigsRequest request =
         ListTransferConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1415,7 +1417,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all transfer configs owned by a project in the specified location.
+   * Returns information about all data transfers in the project.
    *
    * <p>Sample code:
    *
@@ -1426,7 +1428,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String parent = ParentName.ofProjectName("[PROJECT]").toString();
    *   for (TransferConfig element :
    *       dataTransferServiceClient.listTransferConfigs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1434,7 +1436,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The BigQuery project id for which transfer configs should be returned:
+   * @param parent Required. The BigQuery project id for which data sources should be returned:
    *     `projects/{project_id}` or `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1446,7 +1448,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all transfer configs owned by a project in the specified location.
+   * Returns information about all data transfers in the project.
    *
    * <p>Sample code:
    *
@@ -1459,7 +1461,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .addAllDataSourceIds(new ArrayList<String>())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1481,7 +1483,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all transfer configs owned by a project in the specified location.
+   * Returns information about all data transfers in the project.
    *
    * <p>Sample code:
    *
@@ -1494,7 +1496,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .addAllDataSourceIds(new ArrayList<String>())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1515,7 +1517,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about all transfer configs owned by a project in the specified location.
+   * Returns information about all data transfers in the project.
    *
    * <p>Sample code:
    *
@@ -1528,7 +1530,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   ListTransferConfigsRequest request =
    *       ListTransferConfigsRequest.newBuilder()
-   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
    *           .addAllDataSourceIds(new ArrayList<String>())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1672,6 +1674,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *               TransferConfigName.ofProjectLocationTransferConfigName(
    *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .setStartTime(Timestamp.newBuilder().build())
    *           .setEndTime(Timestamp.newBuilder().build())
    *           .build();
@@ -1712,6 +1715,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *               TransferConfigName.ofProjectLocationTransferConfigName(
    *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .setStartTime(Timestamp.newBuilder().build())
    *           .setEndTime(Timestamp.newBuilder().build())
    *           .build();
@@ -1751,6 +1755,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *               TransferConfigName.ofProjectLocationTransferConfigName(
    *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   StartManualTransferRunsResponse response =
    *       dataTransferServiceClient.startManualTransferRuns(request);
@@ -1786,6 +1791,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *               TransferConfigName.ofProjectLocationTransferConfigName(
    *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
+   *           .putAllLabels(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<StartManualTransferRunsResponse> future =
    *       dataTransferServiceClient.startManualTransferRunsCallable().futureCall(request);
@@ -2049,7 +2055,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed transfer runs.
+   * Returns information about running and completed jobs.
    *
    * <p>Sample code:
    *
@@ -2085,7 +2091,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed transfer runs.
+   * Returns information about running and completed jobs.
    *
    * <p>Sample code:
    *
@@ -2119,7 +2125,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed transfer runs.
+   * Returns information about running and completed jobs.
    *
    * <p>Sample code:
    *
@@ -2155,7 +2161,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed transfer runs.
+   * Returns information about running and completed jobs.
    *
    * <p>Sample code:
    *
@@ -2192,7 +2198,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns information about running and completed transfer runs.
+   * Returns information about running and completed jobs.
    *
    * <p>Sample code:
    *
@@ -2236,7 +2242,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns log messages for the transfer run.
+   * Returns user facing log messages for the data transfer run.
    *
    * <p>Sample code:
    *
@@ -2272,7 +2278,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns log messages for the transfer run.
+   * Returns user facing log messages for the data transfer run.
    *
    * <p>Sample code:
    *
@@ -2306,7 +2312,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns log messages for the transfer run.
+   * Returns user facing log messages for the data transfer run.
    *
    * <p>Sample code:
    *
@@ -2343,7 +2349,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns log messages for the transfer run.
+   * Returns user facing log messages for the data transfer run.
    *
    * <p>Sample code:
    *
@@ -2380,7 +2386,7 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns log messages for the transfer run.
+   * Returns user facing log messages for the data transfer run.
    *
    * <p>Sample code:
    *
@@ -2424,7 +2430,10 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user.
+   * Returns true if valid credentials exist for the given data source and requesting user. Some
+   * data sources doesn't support service account, so we need to talk to them on behalf of the end
+   * user. This API just checks whether we have OAuth token for the particular user, which is a
+   * pre-requisite before user can create a transfer config.
    *
    * <p>Sample code:
    *
@@ -2455,7 +2464,10 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user.
+   * Returns true if valid credentials exist for the given data source and requesting user. Some
+   * data sources doesn't support service account, so we need to talk to them on behalf of the end
+   * user. This API just checks whether we have OAuth token for the particular user, which is a
+   * pre-requisite before user can create a transfer config.
    *
    * <p>Sample code:
    *
@@ -2483,7 +2495,10 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user.
+   * Returns true if valid credentials exist for the given data source and requesting user. Some
+   * data sources doesn't support service account, so we need to talk to them on behalf of the end
+   * user. This API just checks whether we have OAuth token for the particular user, which is a
+   * pre-requisite before user can create a transfer config.
    *
    * <p>Sample code:
    *
@@ -2514,7 +2529,10 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns true if valid credentials exist for the given data source and requesting user.
+   * Returns true if valid credentials exist for the given data source and requesting user. Some
+   * data sources doesn't support service account, so we need to talk to them on behalf of the end
+   * user. This API just checks whether we have OAuth token for the particular user, which is a
+   * pre-requisite before user can create a transfer config.
    *
    * <p>Sample code:
    *
@@ -2546,11 +2564,9 @@ public class DataTransferServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enroll data sources in a user project. This allows users to create transfer configurations for
-   * these data sources. They will also appear in the ListDataSources RPC and as such, will appear
-   * in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found
-   * in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui)
-   * and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+   * Enables data transfer service for a given project. This method requires the additional scope of
+   * 'https://www.googleapis.com/auth/cloudplatformprojects' to manage the cloud project
+   * permissions.
    *
    * <p>Sample code:
    *
@@ -2561,29 +2577,24 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   EnrollDataSourcesRequest request =
-   *       EnrollDataSourcesRequest.newBuilder()
-   *           .setName("name3373707")
-   *           .addAllDataSourceIds(new ArrayList<String>())
-   *           .build();
-   *   dataTransferServiceClient.enrollDataSources(request);
+   *   EnableDataTransferServiceRequest request =
+   *       EnableDataTransferServiceRequest.newBuilder().setName("name3373707").build();
+   *   dataTransferServiceClient.enableDataTransferService(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void enrollDataSources(EnrollDataSourcesRequest request) {
-    enrollDataSourcesCallable().call(request);
+  public final void enableDataTransferService(EnableDataTransferServiceRequest request) {
+    enableDataTransferServiceCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enroll data sources in a user project. This allows users to create transfer configurations for
-   * these data sources. They will also appear in the ListDataSources RPC and as such, will appear
-   * in the [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents can be found
-   * in the public guide for [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui)
-   * and [Data Transfer Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+   * Enables data transfer service for a given project. This method requires the additional scope of
+   * 'https://www.googleapis.com/auth/cloudplatformprojects' to manage the cloud project
+   * permissions.
    *
    * <p>Sample code:
    *
@@ -2594,28 +2605,23 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   EnrollDataSourcesRequest request =
-   *       EnrollDataSourcesRequest.newBuilder()
-   *           .setName("name3373707")
-   *           .addAllDataSourceIds(new ArrayList<String>())
-   *           .build();
+   *   EnableDataTransferServiceRequest request =
+   *       EnableDataTransferServiceRequest.newBuilder().setName("name3373707").build();
    *   ApiFuture<Empty> future =
-   *       dataTransferServiceClient.enrollDataSourcesCallable().futureCall(request);
+   *       dataTransferServiceClient.enableDataTransferServiceCallable().futureCall(request);
    *   // Do something.
    *   future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
-    return stub.enrollDataSourcesCallable();
+  public final UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable() {
+    return stub.enableDataTransferServiceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unenroll data sources in a user project. This allows users to remove transfer configurations
-   * for these data sources. They will no longer appear in the ListDataSources RPC and will also no
-   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery). Data transfers
-   * configurations of unenrolled data sources will not be scheduled.
+   * Returns true if data transfer is enabled for a project.
    *
    * <p>Sample code:
    *
@@ -2626,28 +2632,24 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   UnenrollDataSourcesRequest request =
-   *       UnenrollDataSourcesRequest.newBuilder()
-   *           .setName("name3373707")
-   *           .addAllDataSourceIds(new ArrayList<String>())
-   *           .build();
-   *   dataTransferServiceClient.unenrollDataSources(request);
+   *   IsDataTransferServiceEnabledRequest request =
+   *       IsDataTransferServiceEnabledRequest.newBuilder().setName("name3373707").build();
+   *   IsDataTransferServiceEnabledResponse response =
+   *       dataTransferServiceClient.isDataTransferServiceEnabled(request);
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void unenrollDataSources(UnenrollDataSourcesRequest request) {
-    unenrollDataSourcesCallable().call(request);
+  public final IsDataTransferServiceEnabledResponse isDataTransferServiceEnabled(
+      IsDataTransferServiceEnabledRequest request) {
+    return isDataTransferServiceEnabledCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unenroll data sources in a user project. This allows users to remove transfer configurations
-   * for these data sources. They will no longer appear in the ListDataSources RPC and will also no
-   * longer appear in the [BigQuery UI](https://console.cloud.google.com/bigquery). Data transfers
-   * configurations of unenrolled data sources will not be scheduled.
+   * Returns true if data transfer is enabled for a project.
    *
    * <p>Sample code:
    *
@@ -2658,20 +2660,19 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   UnenrollDataSourcesRequest request =
-   *       UnenrollDataSourcesRequest.newBuilder()
-   *           .setName("name3373707")
-   *           .addAllDataSourceIds(new ArrayList<String>())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       dataTransferServiceClient.unenrollDataSourcesCallable().futureCall(request);
+   *   IsDataTransferServiceEnabledRequest request =
+   *       IsDataTransferServiceEnabledRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<IsDataTransferServiceEnabledResponse> future =
+   *       dataTransferServiceClient.isDataTransferServiceEnabledCallable().futureCall(request);
    *   // Do something.
-   *   future.get();
+   *   IsDataTransferServiceEnabledResponse response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
-    return stub.unenrollDataSourcesCallable();
+  public final UnaryCallable<
+          IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable() {
+    return stub.isDataTransferServiceEnabledCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

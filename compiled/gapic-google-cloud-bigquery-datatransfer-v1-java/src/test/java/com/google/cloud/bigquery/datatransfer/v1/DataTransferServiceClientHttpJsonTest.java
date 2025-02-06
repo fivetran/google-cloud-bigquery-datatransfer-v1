@@ -115,6 +115,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDefaultDataRefreshWindowDays(-1804935157)
             .setManualRunsDisabled(true)
             .setMinimumScheduleInterval(Duration.newBuilder().build())
+            .setPartnerLegalName("partnerLegalName767652092")
+            .setRedirectUrl("redirectUrl1970337779")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -180,6 +182,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDefaultDataRefreshWindowDays(-1804935157)
             .setManualRunsDisabled(true)
             .setMinimumScheduleInterval(Duration.newBuilder().build())
+            .setPartnerLegalName("partnerLegalName767652092")
+            .setRedirectUrl("redirectUrl1970337779")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -279,7 +283,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
 
     ListDataSourcesPagedResponse pagedListResponse = client.listDataSources(parent);
 
@@ -311,7 +315,7 @@ public class DataTransferServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
       client.listDataSources(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -381,7 +385,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -391,9 +394,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -447,7 +449,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -457,13 +458,12 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
     TransferConfig transferConfig = TransferConfig.newBuilder().build();
 
     TransferConfig actualResponse = client.createTransferConfig(parent, transferConfig);
@@ -492,7 +492,7 @@ public class DataTransferServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
       TransferConfig transferConfig = TransferConfig.newBuilder().build();
       client.createTransferConfig(parent, transferConfig);
       Assert.fail("No exception raised");
@@ -513,7 +513,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -523,9 +522,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -580,7 +578,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -590,9 +587,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -607,7 +603,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -617,9 +612,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -660,7 +654,6 @@ public class DataTransferServiceClientHttpJsonTest {
               .setParams(Struct.newBuilder().build())
               .setSchedule("schedule-697920873")
               .setScheduleOptions(ScheduleOptions.newBuilder().build())
-              .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
               .setDataRefreshWindowDays(327632845)
               .setDisabled(true)
               .setUpdateTime(Timestamp.newBuilder().build())
@@ -670,9 +663,8 @@ public class DataTransferServiceClientHttpJsonTest {
               .setDatasetRegion("datasetRegion1032293772")
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
               .setEmailPreferences(EmailPreferences.newBuilder().build())
-              .setOwnerInfo(UserInfo.newBuilder().build())
-              .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-              .setError(Status.newBuilder().build())
+              .setPartnerToken("partnerToken151628305")
+              .setPartnerConnectionInfo(Struct.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTransferConfig(transferConfig, updateMask);
@@ -781,7 +773,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -791,9 +782,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -850,7 +840,6 @@ public class DataTransferServiceClientHttpJsonTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
-            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -860,9 +849,8 @@ public class DataTransferServiceClientHttpJsonTest {
             .setDatasetRegion("datasetRegion1032293772")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
-            .setOwnerInfo(UserInfo.newBuilder().build())
-            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
-            .setError(Status.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
+            .setPartnerConnectionInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -964,7 +952,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
 
     ListTransferConfigsPagedResponse pagedListResponse = client.listTransferConfigs(parent);
 
@@ -996,7 +984,7 @@ public class DataTransferServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      ParentName parent = ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]");
       client.listTransferConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1168,6 +1156,7 @@ public class DataTransferServiceClientHttpJsonTest {
                 TransferConfigName.ofProjectLocationTransferConfigName(
                         "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                     .toString())
+            .putAllLabels(new HashMap<String, String>())
             .build();
 
     StartManualTransferRunsResponse actualResponse = client.startManualTransferRuns(request);
@@ -1202,6 +1191,7 @@ public class DataTransferServiceClientHttpJsonTest {
                   TransferConfigName.ofProjectLocationTransferConfigName(
                           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                       .toString())
+              .putAllLabels(new HashMap<String, String>())
               .build();
       client.startManualTransferRuns(request);
       Assert.fail("No exception raised");
@@ -1218,6 +1208,7 @@ public class DataTransferServiceClientHttpJsonTest {
                 RunName.ofProjectLocationTransferConfigRunName(
                         "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
                     .toString())
+            .putAllLabels(new HashMap<String, String>())
             .setScheduleTime(Timestamp.newBuilder().build())
             .setRunTime(Timestamp.newBuilder().build())
             .setErrorStatus(Status.newBuilder().build())
@@ -1231,6 +1222,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setSchedule("schedule-697920873")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1282,6 +1274,7 @@ public class DataTransferServiceClientHttpJsonTest {
                 RunName.ofProjectLocationTransferConfigRunName(
                         "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
                     .toString())
+            .putAllLabels(new HashMap<String, String>())
             .setScheduleTime(Timestamp.newBuilder().build())
             .setRunTime(Timestamp.newBuilder().build())
             .setErrorStatus(Status.newBuilder().build())
@@ -1295,6 +1288,7 @@ public class DataTransferServiceClientHttpJsonTest {
             .setSchedule("schedule-697920873")
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
+            .setPartnerToken("partnerToken151628305")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1722,17 +1716,16 @@ public class DataTransferServiceClientHttpJsonTest {
   }
 
   @Test
-  public void enrollDataSourcesTest() throws Exception {
+  public void enableDataTransferServiceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockService.addResponse(expectedResponse);
 
-    EnrollDataSourcesRequest request =
-        EnrollDataSourcesRequest.newBuilder()
+    EnableDataTransferServiceRequest request =
+        EnableDataTransferServiceRequest.newBuilder()
             .setName("projects/project-9062/locations/location-9062")
-            .addAllDataSourceIds(new ArrayList<String>())
             .build();
 
-    client.enrollDataSources(request);
+    client.enableDataTransferService(request);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1750,19 +1743,18 @@ public class DataTransferServiceClientHttpJsonTest {
   }
 
   @Test
-  public void enrollDataSourcesExceptionTest() throws Exception {
+  public void enableDataTransferServiceExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      EnrollDataSourcesRequest request =
-          EnrollDataSourcesRequest.newBuilder()
+      EnableDataTransferServiceRequest request =
+          EnableDataTransferServiceRequest.newBuilder()
               .setName("projects/project-9062/locations/location-9062")
-              .addAllDataSourceIds(new ArrayList<String>())
               .build();
-      client.enrollDataSources(request);
+      client.enableDataTransferService(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1770,17 +1762,22 @@ public class DataTransferServiceClientHttpJsonTest {
   }
 
   @Test
-  public void unenrollDataSourcesTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
+  public void isDataTransferServiceEnabledTest() throws Exception {
+    IsDataTransferServiceEnabledResponse expectedResponse =
+        IsDataTransferServiceEnabledResponse.newBuilder()
+            .setEnabled(true)
+            .setReason("reason-934964668")
+            .build();
     mockService.addResponse(expectedResponse);
 
-    UnenrollDataSourcesRequest request =
-        UnenrollDataSourcesRequest.newBuilder()
+    IsDataTransferServiceEnabledRequest request =
+        IsDataTransferServiceEnabledRequest.newBuilder()
             .setName("projects/project-9062/locations/location-9062")
-            .addAllDataSourceIds(new ArrayList<String>())
             .build();
 
-    client.unenrollDataSources(request);
+    IsDataTransferServiceEnabledResponse actualResponse =
+        client.isDataTransferServiceEnabled(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
@@ -1798,19 +1795,18 @@ public class DataTransferServiceClientHttpJsonTest {
   }
 
   @Test
-  public void unenrollDataSourcesExceptionTest() throws Exception {
+  public void isDataTransferServiceEnabledExceptionTest() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
 
     try {
-      UnenrollDataSourcesRequest request =
-          UnenrollDataSourcesRequest.newBuilder()
+      IsDataTransferServiceEnabledRequest request =
+          IsDataTransferServiceEnabledRequest.newBuilder()
               .setName("projects/project-9062/locations/location-9062")
-              .addAllDataSourceIds(new ArrayList<String>())
               .build();
-      client.unenrollDataSources(request);
+      client.isDataTransferServiceEnabled(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

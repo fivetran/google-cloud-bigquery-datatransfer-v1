@@ -20,7 +20,7 @@ package com.google.cloud.bigquery.datatransfer.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
-import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
+import com.google.cloud.bigquery.datatransfer.v1.ParentName;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class AsyncListTransferConfigs {
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
       ListTransferConfigsRequest request =
           ListTransferConfigsRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setParent(ParentName.ofProjectLocationName("[PROJECT]", "[LOCATION]").toString())
               .addAllDataSourceIds(new ArrayList<String>())
               .setPageToken("pageToken873572522")
               .setPageSize(883849137)

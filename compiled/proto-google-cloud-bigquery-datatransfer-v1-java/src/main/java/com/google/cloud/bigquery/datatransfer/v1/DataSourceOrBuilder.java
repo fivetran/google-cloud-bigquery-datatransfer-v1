@@ -399,4 +399,44 @@ public interface DataSourceOrBuilder extends
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
    */
   com.google.protobuf.DurationOrBuilder getMinimumScheduleIntervalOrBuilder();
+
+  /**
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   * @return The partnerLegalName.
+   */
+  java.lang.String getPartnerLegalName();
+  /**
+   * <pre>
+   * Partner's legal name of this data source
+   * </pre>
+   *
+   * <code>string partner_legal_name = 22;</code>
+   * @return The bytes for partnerLegalName.
+   */
+  com.google.protobuf.ByteString
+      getPartnerLegalNameBytes();
+
+  /**
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   * @return The redirectUrl.
+   */
+  java.lang.String getRedirectUrl();
+  /**
+   * <pre>
+   * Redirect URL to complete transfer config setup for 3rd party data sources.
+   * </pre>
+   *
+   * <code>string redirect_url = 23;</code>
+   * @return The bytes for redirectUrl.
+   */
+  com.google.protobuf.ByteString
+      getRedirectUrlBytes();
 }

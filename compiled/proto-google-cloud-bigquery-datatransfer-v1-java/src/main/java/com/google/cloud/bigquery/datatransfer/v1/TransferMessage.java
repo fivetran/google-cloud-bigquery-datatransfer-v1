@@ -86,6 +86,14 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR = 3;</code>
      */
     ERROR(3),
+    /**
+     * <pre>
+     * Debug message.
+     * </pre>
+     *
+     * <code>DEBUG = 4;</code>
+     */
+    DEBUG(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -121,6 +129,14 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR = 3;</code>
      */
     public static final int ERROR_VALUE = 3;
+    /**
+     * <pre>
+     * Debug message.
+     * </pre>
+     *
+     * <code>DEBUG = 4;</code>
+     */
+    public static final int DEBUG_VALUE = 4;
 
 
     public final int getNumber() {
@@ -151,6 +167,7 @@ private static final long serialVersionUID = 0L;
         case 1: return INFO;
         case 2: return WARNING;
         case 3: return ERROR;
+        case 4: return DEBUG;
         default: return null;
       }
     }

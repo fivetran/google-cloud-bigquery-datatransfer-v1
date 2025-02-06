@@ -30,10 +30,12 @@ import com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest;
-import com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest;
+import com.google.cloud.bigquery.datatransfer.v1.EnableDataTransferServiceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest;
 import com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledRequest;
+import com.google.cloud.bigquery.datatransfer.v1.IsDataTransferServiceEnabledResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse;
 import com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest;
@@ -48,7 +50,6 @@ import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest;
 import com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse;
 import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
-import com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -148,12 +149,15 @@ public abstract class DataTransferServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: checkValidCredsCallable()");
   }
 
-  public UnaryCallable<EnrollDataSourcesRequest, Empty> enrollDataSourcesCallable() {
-    throw new UnsupportedOperationException("Not implemented: enrollDataSourcesCallable()");
+  public UnaryCallable<EnableDataTransferServiceRequest, Empty>
+      enableDataTransferServiceCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableDataTransferServiceCallable()");
   }
 
-  public UnaryCallable<UnenrollDataSourcesRequest, Empty> unenrollDataSourcesCallable() {
-    throw new UnsupportedOperationException("Not implemented: unenrollDataSourcesCallable()");
+  public UnaryCallable<IsDataTransferServiceEnabledRequest, IsDataTransferServiceEnabledResponse>
+      isDataTransferServiceEnabledCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: isDataTransferServiceEnabledCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

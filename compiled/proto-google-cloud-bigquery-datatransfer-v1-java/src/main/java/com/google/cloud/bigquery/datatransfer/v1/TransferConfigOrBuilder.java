@@ -10,31 +10,31 @@ public interface TransferConfigOrBuilder extends
 
   /**
    * <pre>
-   * Identifier. The resource name of the transfer config.
-   * Transfer config names have the form either
-   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
-   * `projects/{project_id}/transferConfigs/{config_id}`,
-   * where `config_id` is usually a UUID, even though it is not
-   * guaranteed or required. The name is ignored when creating a transfer
-   * config.
+   * The resource name of the transfer config.
+   * Transfer config names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+   * The name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id
+   * is not provided, usually a uuid, even though it is not guaranteed or
+   * required, will be generated for config_id.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1;</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * Identifier. The resource name of the transfer config.
-   * Transfer config names have the form either
-   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or
-   * `projects/{project_id}/transferConfigs/{config_id}`,
-   * where `config_id` is usually a UUID, even though it is not
-   * guaranteed or required. The name is ignored when creating a transfer
-   * config.
+   * The resource name of the transfer config.
+   * Transfer config names have the form of
+   * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+   * The name is automatically generated based on the config_id specified in
+   * CreateTransferConfigRequest along with project_id and region. If config_id
+   * is not provided, usually a uuid, even though it is not guaranteed or
+   * required, will be generated for config_id.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1;</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -91,9 +91,7 @@ public interface TransferConfigOrBuilder extends
 
   /**
    * <pre>
-   * Data source ID. This cannot be changed once data transfer is created. The
-   * full list of available data source IDs can be returned through an API call:
-   * https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list
+   * Data source id. Cannot be changed once data transfer is created.
    * </pre>
    *
    * <code>string data_source_id = 5;</code>
@@ -102,9 +100,7 @@ public interface TransferConfigOrBuilder extends
   java.lang.String getDataSourceId();
   /**
    * <pre>
-   * Data source ID. This cannot be changed once data transfer is created. The
-   * full list of available data source IDs can be returned through an API call:
-   * https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list
+   * Data source id. Cannot be changed once data transfer is created.
    * </pre>
    *
    * <code>string data_source_id = 5;</code>
@@ -115,10 +111,7 @@ public interface TransferConfigOrBuilder extends
 
   /**
    * <pre>
-   * Parameters specific to each data source. For more information see the
-   * bq tab in the 'Setting up a data transfer' section for each data source.
-   * For example the parameters for Cloud Storage transfers are listed here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
@@ -127,10 +120,7 @@ public interface TransferConfigOrBuilder extends
   boolean hasParams();
   /**
    * <pre>
-   * Parameters specific to each data source. For more information see the
-   * bq tab in the 'Setting up a data transfer' section for each data source.
-   * For example the parameters for Cloud Storage transfers are listed here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
@@ -139,10 +129,7 @@ public interface TransferConfigOrBuilder extends
   com.google.protobuf.Struct getParams();
   /**
    * <pre>
-   * Parameters specific to each data source. For more information see the
-   * bq tab in the 'Setting up a data transfer' section for each data source.
-   * For example the parameters for Cloud Storage transfers are listed here:
-   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
+   * Data transfer specific parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9;</code>
@@ -153,7 +140,8 @@ public interface TransferConfigOrBuilder extends
    * <pre>
    * Data transfer schedule.
    * If the data source does not support a custom schedule, this should be
-   * empty. If it is empty, the default value for the data source will be used.
+   * empty. If it is empty, the default value for the data source will be
+   * used.
    * The specified times are in UTC.
    * Examples of valid format:
    * `1st,3rd monday of month 15:30`,
@@ -161,9 +149,7 @@ public interface TransferConfigOrBuilder extends
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-   *
-   * NOTE: The minimum interval time between recurring transfers depends on the
-   * data source; refer to the documentation for your data source.
+   * NOTE: the granularity should be at least 8 hours, or less frequent.
    * </pre>
    *
    * <code>string schedule = 7;</code>
@@ -174,7 +160,8 @@ public interface TransferConfigOrBuilder extends
    * <pre>
    * Data transfer schedule.
    * If the data source does not support a custom schedule, this should be
-   * empty. If it is empty, the default value for the data source will be used.
+   * empty. If it is empty, the default value for the data source will be
+   * used.
    * The specified times are in UTC.
    * Examples of valid format:
    * `1st,3rd monday of month 15:30`,
@@ -182,9 +169,7 @@ public interface TransferConfigOrBuilder extends
    * `first sunday of quarter 00:00`.
    * See more explanation about the format here:
    * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
-   *
-   * NOTE: The minimum interval time between recurring transfers depends on the
-   * data source; refer to the documentation for your data source.
+   * NOTE: the granularity should be at least 8 hours, or less frequent.
    * </pre>
    *
    * <code>string schedule = 7;</code>
@@ -222,44 +207,11 @@ public interface TransferConfigOrBuilder extends
 
   /**
    * <pre>
-   * Options customizing different types of data transfer schedule.
-   * This field replaces "schedule" and "schedule_options" fields.
-   * ScheduleOptionsV2 cannot be used together with ScheduleOptions/Schedule.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2 schedule_options_v2 = 31;</code>
-   * @return Whether the scheduleOptionsV2 field is set.
-   */
-  boolean hasScheduleOptionsV2();
-  /**
-   * <pre>
-   * Options customizing different types of data transfer schedule.
-   * This field replaces "schedule" and "schedule_options" fields.
-   * ScheduleOptionsV2 cannot be used together with ScheduleOptions/Schedule.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2 schedule_options_v2 = 31;</code>
-   * @return The scheduleOptionsV2.
-   */
-  com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2 getScheduleOptionsV2();
-  /**
-   * <pre>
-   * Options customizing different types of data transfer schedule.
-   * This field replaces "schedule" and "schedule_options" fields.
-   * ScheduleOptionsV2 cannot be used together with ScheduleOptions/Schedule.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2 schedule_options_v2 = 31;</code>
-   */
-  com.google.cloud.bigquery.datatransfer.v1.ScheduleOptionsV2OrBuilder getScheduleOptionsV2OrBuilder();
-
-  /**
-   * <pre>
    * The number of days to look back to automatically refresh the data.
    * For example, if `data_refresh_window_days = 10`, then every day
    * BigQuery reingests data for [today-10, today-1], rather than ingesting data
    * for just [today-1].
-   * Only valid if the data source supports the feature. Set the value to 0
+   * Only valid if the data source supports the feature. Set the value to  0
    * to use the default value.
    * </pre>
    *
@@ -270,8 +222,8 @@ public interface TransferConfigOrBuilder extends
 
   /**
    * <pre>
-   * Is this config disabled. When set to true, no runs will be scheduled for
-   * this transfer config.
+   * Is this config disabled. When set to true, no runs are scheduled
+   * for a given transfer.
    * </pre>
    *
    * <code>bool disabled = 13;</code>
@@ -386,9 +338,6 @@ public interface TransferConfigOrBuilder extends
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
-   *
-   * The format for specifying a pubsub topic is:
-   * `projects/{project_id}/topics/{topic_id}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
@@ -399,9 +348,6 @@ public interface TransferConfigOrBuilder extends
    * <pre>
    * Pub/Sub topic where notifications will be sent after transfer runs
    * associated with this transfer config finish.
-   *
-   * The format for specifying a pubsub topic is:
-   * `projects/{project_id}/topics/{topic_id}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 15;</code>
@@ -442,105 +388,82 @@ public interface TransferConfigOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Information about the user whose credentials are used to
-   * transfer data. Populated only for `transferConfigs.get` requests. In case
-   * the user information is not available, this field will not be populated.
+   * A unique identifier used for identifying a transfer setup stored on
+   * external partner side. The token is opaque to DTS and can only be
+   * interpreted by partner. Partner data source should create a mapping between
+   * the config id and the token to validate that a transfer config/run is
+   * legitimate.
    * </pre>
    *
-   * <code>optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the ownerInfo field is set.
+   * <code>string partner_token = 22;</code>
+   * @return The partnerToken.
    */
-  boolean hasOwnerInfo();
+  java.lang.String getPartnerToken();
   /**
    * <pre>
-   * Output only. Information about the user whose credentials are used to
-   * transfer data. Populated only for `transferConfigs.get` requests. In case
-   * the user information is not available, this field will not be populated.
+   * A unique identifier used for identifying a transfer setup stored on
+   * external partner side. The token is opaque to DTS and can only be
+   * interpreted by partner. Partner data source should create a mapping between
+   * the config id and the token to validate that a transfer config/run is
+   * legitimate.
    * </pre>
    *
-   * <code>optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The ownerInfo.
+   * <code>string partner_token = 22;</code>
+   * @return The bytes for partnerToken.
    */
-  com.google.cloud.bigquery.datatransfer.v1.UserInfo getOwnerInfo();
-  /**
-   * <pre>
-   * Output only. Information about the user whose credentials are used to
-   * transfer data. Populated only for `transferConfigs.get` requests. In case
-   * the user information is not available, this field will not be populated.
-   * </pre>
-   *
-   * <code>optional .google.cloud.bigquery.datatransfer.v1.UserInfo owner_info = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  com.google.cloud.bigquery.datatransfer.v1.UserInfoOrBuilder getOwnerInfoOrBuilder();
+  com.google.protobuf.ByteString
+      getPartnerTokenBytes();
 
   /**
    * <pre>
-   * The encryption configuration part. Currently, it is only used for the
-   * optional KMS key name. The BigQuery service account of your project must be
-   * granted permissions to use the key. Read methods will return the key name
-   * applied in effect. Write methods will apply the key if it is present, or
-   * otherwise try to apply project default keys if it is absent.
+   * Transfer settings managed by partner data sources. It is stored as
+   * key-value pairs and used for DTS UI display purpose only. Two reasons we
+   * don't want to store them together with 'params' are:
+   *  - The connection info is provided by partner and not editable in DTS UI
+   *    which is different from the immutable parameter. It will be confusing to
+   *    add another boolean to DataSourceParameter to differentiate them.
+   *  - The connection info can be any arbitrary key-value pairs. Adding them to
+   *    params fields requires partner to provide definition for them in data
+   *    source definition. It will be friendlier to avoid that for partners.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;</code>
-   * @return Whether the encryptionConfiguration field is set.
+   * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
+   * @return Whether the partnerConnectionInfo field is set.
    */
-  boolean hasEncryptionConfiguration();
+  boolean hasPartnerConnectionInfo();
   /**
    * <pre>
-   * The encryption configuration part. Currently, it is only used for the
-   * optional KMS key name. The BigQuery service account of your project must be
-   * granted permissions to use the key. Read methods will return the key name
-   * applied in effect. Write methods will apply the key if it is present, or
-   * otherwise try to apply project default keys if it is absent.
+   * Transfer settings managed by partner data sources. It is stored as
+   * key-value pairs and used for DTS UI display purpose only. Two reasons we
+   * don't want to store them together with 'params' are:
+   *  - The connection info is provided by partner and not editable in DTS UI
+   *    which is different from the immutable parameter. It will be confusing to
+   *    add another boolean to DataSourceParameter to differentiate them.
+   *  - The connection info can be any arbitrary key-value pairs. Adding them to
+   *    params fields requires partner to provide definition for them in data
+   *    source definition. It will be friendlier to avoid that for partners.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;</code>
-   * @return The encryptionConfiguration.
+   * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
+   * @return The partnerConnectionInfo.
    */
-  com.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration getEncryptionConfiguration();
+  com.google.protobuf.Struct getPartnerConnectionInfo();
   /**
    * <pre>
-   * The encryption configuration part. Currently, it is only used for the
-   * optional KMS key name. The BigQuery service account of your project must be
-   * granted permissions to use the key. Read methods will return the key name
-   * applied in effect. Write methods will apply the key if it is present, or
-   * otherwise try to apply project default keys if it is absent.
+   * Transfer settings managed by partner data sources. It is stored as
+   * key-value pairs and used for DTS UI display purpose only. Two reasons we
+   * don't want to store them together with 'params' are:
+   *  - The connection info is provided by partner and not editable in DTS UI
+   *    which is different from the immutable parameter. It will be confusing to
+   *    add another boolean to DataSourceParameter to differentiate them.
+   *  - The connection info can be any arbitrary key-value pairs. Adding them to
+   *    params fields requires partner to provide definition for them in data
+   *    source definition. It will be friendlier to avoid that for partners.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.EncryptionConfiguration encryption_configuration = 28;</code>
+   * <code>.google.protobuf.Struct partner_connection_info = 23;</code>
    */
-  com.google.cloud.bigquery.datatransfer.v1.EncryptionConfigurationOrBuilder getEncryptionConfigurationOrBuilder();
-
-  /**
-   * <pre>
-   * Output only. Error code with detailed information about reason of the
-   * latest config failure.
-   * </pre>
-   *
-   * <code>.google.rpc.Status error = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the error field is set.
-   */
-  boolean hasError();
-  /**
-   * <pre>
-   * Output only. Error code with detailed information about reason of the
-   * latest config failure.
-   * </pre>
-   *
-   * <code>.google.rpc.Status error = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The error.
-   */
-  com.google.rpc.Status getError();
-  /**
-   * <pre>
-   * Output only. Error code with detailed information about reason of the
-   * latest config failure.
-   * </pre>
-   *
-   * <code>.google.rpc.Status error = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   */
-  com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+  com.google.protobuf.StructOrBuilder getPartnerConnectionInfoOrBuilder();
 
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig.DestinationCase getDestinationCase();
 }

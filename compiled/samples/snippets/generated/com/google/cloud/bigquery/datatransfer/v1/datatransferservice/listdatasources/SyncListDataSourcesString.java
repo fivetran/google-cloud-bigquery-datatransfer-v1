@@ -19,7 +19,7 @@ package com.google.cloud.bigquery.datatransfer.v1.samples;
 // [START bigquerydatatransfer_v1_generated_DataTransferService_ListDataSources_String_sync]
 import com.google.cloud.bigquery.datatransfer.v1.DataSource;
 import com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient;
-import com.google.cloud.bigquery.datatransfer.v1.ProjectName;
+import com.google.cloud.bigquery.datatransfer.v1.ParentName;
 
 public class SyncListDataSourcesString {
 
@@ -34,7 +34,7 @@ public class SyncListDataSourcesString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-      String parent = ProjectName.of("[PROJECT]").toString();
+      String parent = ParentName.ofProjectName("[PROJECT]").toString();
       for (DataSource element : dataTransferServiceClient.listDataSources(parent).iterateAll()) {
         // doThingsWith(element);
       }
